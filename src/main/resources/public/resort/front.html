@@ -8,17 +8,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>Web Design Mastery | Miranda</title>
+    <title>Chiangrung | Resort</title>
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #0f1a2c;
+  --primary-color: #0d200ec4;
   --secondary-color: #f6ac0f;
   --text-dark: #0f172a;
   --text-light: #64748b;
-  --extra-light: #f8fafc;
+  --extra-light: #ffffff;
   --white: #ffffff;
   --max-width: 1200px;
   --header-font: "Playfair Display", serif;
@@ -175,28 +175,34 @@ nav {
 
 .header {
   padding-block: 5rem;
-  background-image: linear-gradient(
-      rgba(15, 26, 44, 0.5),
-      rgba(15, 26, 44, 0.5)
-    ),
-    url("assets/header.jpg");
+  background-image: url("https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/366704874_267813429340833_4735117681639780634_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=d_QiGPtUcfAAX_od9Cp&_nc_ht=scontent.fbkk14-1.fna&oh=00_AfCB5YW8QmGWdyMgflNgLBomIHHs2MyeuJiBq25Dj1N5nQ&oe=654785F8");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+
 .header__container .section__subheader {
   color: var(--white);
 }
 
+.header__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .header__container h1 {
-  margin-bottom: 2rem;
+  margin: 0; /* เอา margin ออกเพื่อกำหนดระยะห่างด้วย flex */
   font-size: 6rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 7rem;
   font-family: var(--header-font);
   color: var(--white);
 }
+
 
 .booking {
   background-color: var(--primary-color);
@@ -520,12 +526,6 @@ nav {
   color: var(--text-light);
 }
 
-.news__header {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
 .news__grid {
   margin-top: 4rem;
   display: grid;
@@ -821,8 +821,8 @@ nav {
       <div class="nav__bar">
         <div class="nav__header">
           <div class="logo nav__logo">
-            <div>H</div>
-            <span>HOTEL<br />MIRANDA</span>
+            <div>C</div>
+            <span>CHIANGRUNG<br />PARK</span>
           </div>
           <div class="nav__menu__btn" id="menu-btn">
             <i class="ri-menu-line"></i>
@@ -834,16 +834,14 @@ nav {
           <li><a href="#room">Room</a></li>
           <li><a href="#feature">Feature</a></li>
           <li><a href="#menu">Menu</a></li>
-          <li><a href="#news">News</a></li>
         </ul>
       </div>
     </nav>
 
     <header class="header" id="home">
       <div class="section__container header__container">
-        <p class="section__subheader">ABOUT US</p>
-        <h1>The Perfect<br />Base For You</h1>
-        <button class="btn">Take A Tour</button>
+        <p class="section__subheader">CHIANGRAI THAILAND</p>
+        <h1> CHIANGRUNG PARK</h1>
       </div>
     </header>
 
@@ -911,20 +909,20 @@ nav {
           <img src="assets/room-1.jpg" alt="room" />
           <div class="room__card__details">
             <div>
-              <h4>Deluxe Suite</h4>
-              <p>Well-appointed rooms designed for guests who desire a more.</p>
+              <h4>Extra Floating House</h4>
+              <p>1 bed room and 1 living room (2-4 people)</p>
             </div>
-            <h3>$399<span>/night</span></h3>
+            <h3>4000<span>/night</span></h3>
           </div>
         </div>
         <div class="room__card">
           <img src="assets/room-2.jpg" alt="room" />
           <div class="room__card__details">
             <div>
-              <h4>Family Suite</h4>
-              <p>Consist of multiple rooms and a common living area.</p>
+              <h4>Floating House</h4>
+              <p>1 bed room with Jacuzzi (2-3 people)</p>
             </div>
-            <h3>$599<span>/night</span></h3>
+            <h3>2400<span>/night</span></h3>
           </div>
         </div>
         <div class="room__card">
@@ -1222,7 +1220,7 @@ nav {
             <li>
               <span><i class="ri-record-mail-line"></i></span>
               <div>
-                <h5>Email</h5>
+                <h5>Email</h5>      
                 <p>info@hotelmiranda.com</p>
               </div>
             </li>

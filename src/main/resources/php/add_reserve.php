@@ -22,7 +22,6 @@
 		<li><a href = "gallery.php">Gallery</a></li> |
 		<li><a href = "dineandlounge.php">Dine and Lounge</a></li> |			
 		<li><a href = "reservation.php">Make a reservation</a></li> |
-		<li><a href = "rulesandregulation.php">Rules and Regulation</a></li>
 	</ul>
 	<div style = "margin-left:0;" class = "container">
 		<div class = "panel panel-default">

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking</title>
+</head>
+<body>
+    <h1>Hotel Booking System</h1>
+    <form action="/checkAvailability" method="post">
+        <label for="roomNumber">Room Number:</label>
+        <input type="text" name="roomNumber" id="roomNumber" required>
+        <br>
+
+        <label for="checkIn">Check-in Date (YYYY-MM-DD):</label>
+        <input type="text" name="checkIn" id="checkIn" required>
+        <br>
+
+        <label for="checkOut">Check-out Date (YYYY-MM-DD):</label>
+        <input type="text" name="checkOut" id="checkOut" required>
+        <br>
+
+        <label for="numGuests">Number of Guests:</label>
+        <input type="number" name="numGuests" id="numGuests" required>
+        <br>
+
+        <button type="submit">Check Availability</button>
+    </form>
+
+    <p th:if="${result}" th:text="${result}"></p>
+</body>
+</html>
+

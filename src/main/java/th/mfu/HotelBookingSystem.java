@@ -62,7 +62,7 @@ public class HotelBookingSystem {
 
         System.out.println("Your room has been booked. Thank you!");
 
-
         scanner.close();
+        //
     }
 }

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0'); /* เปลี่ยนเส้นทางไปยังภาพพื้นหลังที่คุณต้องการใช้ */
+            background-size: cover; /* ปรับขนาดภาพให้เต็มหน้าจอ */
+            background-position: center; /* จัดตำแหน่งภาพที่วางในกลางหน้าจอ */
+            background-repeat: no-repeat; /* ไม่ซ้ำภาพพื้นหลัง */
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: -1;
+    }
+
+        nav {
+        padding: 50px;
+        background-color: #45523F;
+        width: 1330px;
+        
+      }
+
+      .cart-img {
+        width: 45px;
+        margin-left: 85%;
+        margin-top: 20px;
+      }
+
+      .container .logo {
+        margin-right:100px ;
+        
+        
+      }
+      .nav-bar1 {
+         background-color: #fff;
+         color: #C4A621;
+         padding: 15px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         width: 650px;
+         margin-left: 350px;
+         
+         
+
+      }
+
+      .logo {
+         font-size: 1.5rem;
+         font-weight: bold;
+         color: white;
+         text-decoration: none;
+         
+      }
+
+      .menu {
+         list-style: none;
+         display: flex;
+         margin-top: 32px;
+         margin-right: 150px;
+         
+      }
+
+      .menu li {
+         margin: 0 15px;
+         font-size: 1.5rem;
+         margin-left: 40px;
+         
+      }
+
+      .menu a {
+         text-decoration: none;
+         color: #C4A621;
+         font-weight: bold;
+         font-size: 1rem;
+      }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            
+            
+            justify-content: 20px;
+            text-align: center;
+            
+            
+            
+                    
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 850px;
+            margin-left: 50px;
+            color: #fff; 
+        }
+
+    
+
+        
+
+        .frame {
+            background-color: rgba(240, 240, 240, 0.3); /* ปรับค่า alpha (0.8) ตามต้องการ */
+            padding: 60px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            bottom: 750px; /* ปรับตามความต้องการ */
+            z-index: 1; /* ให้เป็นชั้นบนสุด */
+                    
+        }
+
+ 
+
+       
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+
+        .booking-form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .table-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .table-box {
+            background-color: #45523F;
+            color: #fff; 
+            padding: 10px;
+            text-align: center;
+            cursor: pointer; /* เพิ่ม cursor: pointer เพื่อแสดงว่าเป็นองค์ประกอบที่สามารถคลิกได้ */
+        }
+
+        .table-box.selected {
+            background-color: #C4A621; /* เปลี่ยนสีเป็นสีเหลืองเมื่อถูกเลือก */
+        }
+
+        .table-box:last-child {
+            margin-right: 0;
+        }
+
+        .table-box.booked {
+             background-color: red; /* หรือสไตล์อื่น ๆ ที่คุณต้องการสำหรับโต๊ะที่ถูกจอง */
+        }
+
+
+        .booking-form {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-right: 325px;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 750px;
+            z-index: 1;
+            
+        }
+
+        .booking-box {
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            background-color: rgba(240, 240, 240, 0.4);
+            
+            
+            
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <img src="img/shopping(1)" alt="Cart" class="cart-img">
+        </a>
+            <div class="nav-bar">
+                
+                <div class="nav-bar1">
+                    <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png" class="logo">
+            
+                    <ul class="menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">MENU</a></li>
+                        <li><a href="#">ORDER</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+    </nav>
+
+    <div class="container">
+        <h1>Booking Tables</h1>
+
+        <div class="frame">
+            <table class="desktop-4 table">
+                
+                <tr class="table-row">
+                    <td class="table-box" onclick="selectTable(this);">Table01</td>
+                    <td class="table-box" onclick="selectTable(this);">Table02</td>
+                    <td class="table-box" onclick="selectTable(this);">Table03</td>
+                    <td class="table-box" onclick="selectTable(this);">Table04</td>
+                    <td class="table-box" onclick="selectTable(this);">Table05</td>
+                    <td class="table-box" onclick="selectTable(this);">Table06</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-box" onclick="selectTable(this);">Table07</td>
+                    <td class="table-box" onclick="selectTable(this);">Table08</td>
+                    <td class="table-box" onclick="selectTable(this);">Table09</td>
+                    <td class="table-box" onclick="selectTable(this);">Table10</td>
+                    <td class="table-box" onclick="selectTable(this);">Table11</td>
+                    <td class="table-box" onclick="selectTable(this);">Table12</td>
+                </tr>
+            </table>
+
+            <table class="home table">
+                <tr class="table-row">
+                    <td class="table-box" onclick="selectTable(this);">Table13</td>
+                    <td class="table-box" onclick="selectTable(this);">Table14</td>
+                    <td class="table-box" onclick="selectTable(this);">Table15</td>
+                    <td class="table-box" onclick="selectTable(this);">Table16</td>
+                    <td class="table-box" onclick="selectTable(this);">Table17</td>
+                    <td class="table-box" onclick="selectTable(this);">Table18</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-box" onclick="selectTable(this);">Table19</td>
+                    <td class="table-box" onclick="selectTable(this);">Table20</td>
+                    <td class="table-box" onclick="selectTable(this);">Table21</td>
+                    <td class="table-box" onclick="selectTable(this);">Table22</td>
+                    <td class="table-box" onclick="selectTable(this);">Table23</td>
+                    <td class="table-box" onclick="selectTable(this);">Table24</td>
+                </tr>
+            </table>
+
+
+            
+        </div>
+            <div class="booking booking-form">
+                
+                <div class="booking-box">
+                    <!-- เพิ่มฟอร์มการจองตารางที่นี่ -->
+                    <p>Please fill in your booking information</p>
+                    <form onsubmit="submitForm(); return false;">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br>
+
+                        <label for="date">Birthday:</label>
+                        <input type="date" id="date" name="date" required><br>
+
+                        <button type="submit">Booking</button>
+                        
+                    
+
+                    </form>
+                    <!-- แสดงข้อมูลที่กรอก -->
+                    <div id="booking-result"></div>
+                    <!-- แสดงข้อมูลที่กรอก -->
+                    <div id="booking-result">
+                        <h>Fill the information</h>
+                        <p id="booking-name"></p>
+                        <p id="booking-email"></p>
+                        <p id="booking-date"></p>
+                        <p id="booking-table"></p>
+                    </div>
+
+                </div>
+        </div>
+
+       
+    </div>
+    <script>
+        let selectedTable = null;
+    
+        function selectTable(table) {
+            // ยกเลิกการเลือกที่เก่า (ถ้ามี)
+            if (selectedTable) {
+                selectedTable.classList.remove('selected');
+            }
+    
+            // เลือก table ใหม่
+            selectedTable = table;
+            selectedTable.classList.add('selected');
+        }
+    
+        function submitForm() {
+            event.preventDefault(); // Prevent the default form submission
+            if (selectedTable) {
+                // ดึงข้อมูลจากฟอร์ม
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const date = document.getElementById('date').value;
+
+                // แสดงข้อมูลที่กรอก
+                document.getElementById('booking-name').innerHTML = `Name: ${name}`;
+                document.getElementById('booking-email').innerHTML = `Email: ${email}`;
+                document.getElementById('booking-date').innerHTML = `Birthday: ${date}`;
+                document.getElementById('booking-table').innerHTML = `Booking tables: ${selectedTable.textContent}`;
+
+                // เพิ่มคลาส 'booked' เพื่อแสดงสถานะการจองของโต๊ะ
+                selectedTable.classList.add('booked');
+            }
+        }
+
+    </script>
+</body>
+</html>

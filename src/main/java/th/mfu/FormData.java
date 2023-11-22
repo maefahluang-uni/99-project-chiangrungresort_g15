@@ -9,7 +9,6 @@ public class FormData {
     private String checkout;
 
     // Constructors (you may not need them if you are using default constructor)
-
     public FormData() {
     }
 

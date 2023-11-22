@@ -13,7 +13,6 @@ public class FormController {
         model.addAttribute("formData", new FormData());
         return "form";
     }
-
     @PostMapping("/submit_form")
     public String submitForm(FormData formData) {
         // Handle form submission logic here

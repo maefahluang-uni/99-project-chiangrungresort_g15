@@ -7,6 +7,7 @@ $(document).ready(function () {
             success: function (data) {
                 // Clear existing menu items
                 $('#menuContainer').empty();
+                
 
                 // Loop through the retrieved data and append each menu item
                 data.forEach(function (menuItem) {

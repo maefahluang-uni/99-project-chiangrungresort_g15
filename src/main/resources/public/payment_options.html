@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .payment-options {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .payment-method:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="payment-options">
+        <h2>Select Payment Method</h2>
+
+        <div class="payment-methods">
+            <div class="payment-method" onclick="selectPayment('credit-card')">
+                <img src="credit-card-icon.png" alt="Credit Card">
+                <p>Credit Card</p>
+            </div>
+            <div class="payment-method" onclick="selectPayment('qr-code')">
+                <img src="qr-code-icon.png" alt="QR Code">
+                <p>QR Code</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectPayment(paymentMethod) {
+        // You can redirect the user to the appropriate payment page based on their selection
+        if (paymentMethod === 'credit-card') {
+            window.location.href = 'credit_card_payment.html';
+        } else if (paymentMethod === 'qr-code') {
+            window.location.href = 'qr_code_payment.html';
+        }
+    }
+</script>
+
+</body>
+</html>

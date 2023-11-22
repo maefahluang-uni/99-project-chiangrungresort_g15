@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Book Now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: -1;
+    }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .container .logo {
+            margin-right: 100px;
+        }
+
+        nav {
+            padding: 40px;
+            background-color: #45523F;
+        }
+
+        .nav-bar {
+            background-color: #fff;
+            color: #C4A621;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color:white;
+            text-decoration: none;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin-top: 32px;
+        }
+
+        .menu li {
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #45523F;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .room-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        .room-card {
+            position: relative;
+            display: flex;
+            background-color: #45523F;
+            padding: 20px;
+            flex-basis: 60%;
+            margin-bottom:25px;
+            box-sizing: border-box;
+            height: 300px;
+        }
+
+        .room-card .room-details {
+            flex: 1;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        
+        .room-title,
+        .room-description{
+            margin: 5px 0;
+            font-size: 2rem;
+            text-align: left;
+        }
+        .room-price,
+        .room-extras {
+            margin: 5px 0;
+            text-align: left;
+        }
+        .room-description
+        {
+            font-size: 1rem; 
+        }
+        .room-price {
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+
+        .price-extras-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: absolute;
+            bottom: 50px;
+            right: 10px;
+        }
+
+        .book-now-button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            background-color: #FFD700;
+            color: #45523F;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .room-description .fas {
+            margin-right: 7px;
+            /* Adjust the value based on your preference */
+        }
+
+        .room-description {
+            margin-top: 15px;
+            /* Adjust the value based on your preference */
+        }
+        #about {
+    color: white;
+    padding: 20px;
+    text-indent:10%;
+    text-align: left;
+    }
+
+    #about p {
+        margin-right: 20px; /* Adjust the right margin based on your preference */
+    }
+
+    #about div {
+        margin-right: 20px; /* Adjust the right margin based on your preference */
+    }
+        footer {
+            background-color: #45523F;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-bar">
+
+            <div class="container">
+                <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png"
+                    srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x"
+                    width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo"
+                    data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png"
+                    class="logo">
+
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#room-section">Room</a></li>
+                    <li><a href="#about">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="room-section">
+        <div class="room-card">
+            <img class="room-image" src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/499055184.jpg?k=90a21cb62146181892727dc355ecf9d66075e0392ee1039b84f560c3b088b9b8&o=&hp=1">
+            <div class="room-details">
+                <div class="room-title"><strong>Nordic House</strong></div>
+                <div class="room-description">
+                    -1 Bedroom (King Size Bed)<br>
+                    -1 Bathroom<br>
+
+                    <div class="room-description">
+                        <i class="fas fa-wifi"></i> Free Wi-Fi Internet<br>
+                        <i class="fas fa-users"></i> Maximum Occupancy: 4 persons<br>
+                        <i class="fas fa-utensils"></i>  Include Breakfast
+                    </div>
+                </div>
+                <div class="price-extras-container">
+                    <div class="room-price">8,900 THB/Per night</div>
+                    
+                </div>
+                <button class="book-now-button btn btn-warning">
+                    <a href="fillInfo.html?type=Nordic House&price=8,900&image=https://cf2.bstatic.com/xdata/images/hotel/max1024x768/499055184.jpg?k=90a21cb62146181892727dc355ecf9d66075e0392ee1039b84f560c3b088b9b8&o=&hp=1">Book Now</a>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="room-card">
+            <img class="room-image" src="https://cf2.bstatic.com/images/hotel/max1024x768/499/499045654.jpg">
+            <div class="room-details">
+                <div class="room-title"><strong>Ban Liu Lu Lom</strong></div>
+                <div class="room-description">
+                    1 Bedroom (King Size Bed)<br>
+                    1 Bathroom<br>
+                    <div class="room-description">
+                        <i class="fas fa-wifi"></i> Free Wi-Fi Internet<br>
+                        <i class="fas fa-users"></i> Maximum Occupancy: 4 persons<br>
+                        <i class="fas fa-utensils"></i>  Include Breakfast
+                    </div>
+                </div>
+                <div class="price-extras-container">
+                    <div class="room-price">4,500 THB/Per night</div>
+                   
+                </div>
+                <button class="book-now-button btn btn-warning">
+                    <a href="fillInfo.html?type=Ban Liu Lu Lom&price=4,500&image=https://cf2.bstatic.com/images/hotel/max1024x768/499/499045654.jpg">Book Now</a>
+                </button>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <img class="room-image" src="https://chiangrungpark.com/wp-content/uploads/2023/02/DSC5678.jpg">
+        <div class="room-details">
+            <div class="room-title"><strong>Kra Ding Nang Fah</strong></div>
+            <div class="room-description">
+                1 Bedroom (King Size Bed)<br>
+                1 Bathroom<br>
+                <div class="room-description">
+                    <i class="fas fa-wifi"></i> Free Wi-Fi Internet<br>
+                        <i class="fas fa-users"></i> Maximum Occupancy: 3 persons<br>
+                        <i class="fas fa-utensils"></i>  Include Breakfast
+                </div>
+            </div>
+            <div class="price-extras-container">
+                <div class="room-price">3,500 THB/Per night</div>
+               
+            </div>
+            
+            <button class="book-now-button btn btn-warning">
+                <a href="fillInfo.html?type=Kra Ding Nang Fah &price=3,500&image=https://chiangrungpark.com/wp-content/uploads/2023/02/DSC5678.jpg">Book Now</a>
+            </button>
+        </div>
+    </div>
+
+        <div class="room-card">
+            <img class="room-image" src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/498359155.jpg?k=64fc6c12372a369c53c60685f421b87d7a81b4d7be20ef73303e5205f948e5de&o=">
+        <div class="room-details">
+            <div class="room-title"><strong>Ban Sri  trang</strong></div>
+            <div class="room-description">
+                1 Bedroom (King Size Bed)<br>
+                1 Bathroom<br>
+                <div class="room-description">
+                    <i class="fas fa-wifi"></i> Free Wi-Fi Internet<br>
+                        <i class="fas fa-users"></i> Maximum Occupancy: 3 persons<br>
+                        <i class="fas fa-utensils"></i>  Include Breakfast
+                </div>
+            </div>
+            <div class="price-extras-container">
+                <div class="room-price">3,900 THB/Per night</div>
+               
+            </div>
+            <button class="book-now-button btn btn-warning">
+                <a href="fillInfo.html?type=Ban Sri Trang &price=3,900&image=https://cf2.bstatic.com/xdata/images/hotel/max1024x768/498359155.jpg?k=64fc6c12372a369c53c60685f421b87d7a81b4d7be20ef73303e5205f948e5de&o=">Book Now</a>
+            </button>
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <h2>Contact</h2>
+    <p>
+        Telephone number: 094-371-0994
+        <div>Facebook: Chiangrungpark</div>
+    </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2022 Chiangrungpark. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+

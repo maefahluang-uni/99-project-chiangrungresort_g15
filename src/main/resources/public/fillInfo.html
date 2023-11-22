@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+    
+        .container {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    
+        .image-container {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center image vertically */
+        }
+    
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    
+        .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+    
+        h2 {
+            text-align: center;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        label {
+            margin-top: 10px;
+        }
+    
+        input {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    
+        #roomType {
+            font-weight: bold; /* Make the room type text bold */
+            color: #333; /* Set the text color for room type */
+        }
+    
+        #roomPrice {
+            font-weight: bold; /* Make the room price text bold */
+            color: #4CAF50; /* Set the text color for room price */
+        }
+    </style>
+    
+    
+</head>
+
+
+
+<div class="container">
+    <div class="container">
+        <div class="image-container">
+            <!-- Display the selected room image -->
+            <img id="roomImage" src="" alt="Room Image">
+        </div>
+
+    <div class="form-container">
+        <h2>Information Form</h2>
+
+        <form id="infoForm" action="#" method="post" onsubmit="return handleSubmit()">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="checkin">Check In:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Check Out:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <div>
+                <label>Room Type:</label>
+                <span id="roomType"></span>
+            </div>
+            <div>
+                <label>Room Price:</label>
+                <span id="roomPrice"></span>
+            </div>
+            
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+
+<script>
+    
+    // Function to retrieve query parameters from the URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function setRoomDetails() {
+        const roomImage = document.getElementById('roomImage');
+        const roomType = document.getElementById('roomType');
+        const roomPrice = document.getElementById('roomPrice');
+
+        // Get room details from query parameters
+        const roomImageURL = getQueryParam('image');
+        const type = getQueryParam('type');
+        const price = getQueryParam('price');
+
+        // Set room details in the form
+        roomImage.src = roomImageURL;
+        roomType.textContent = type;
+        roomPrice.textContent = price;
+    }
+
+
+    // Call setRoomDetails when the page loads
+    window.onload = setRoomDetails;
+
+    function validateForm() {
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var checkin = document.getElementById('checkin').value;
+        var checkout = document.getElementById('checkout').value;
+
+        if (fname === '' || lname === '' || email === '' || phone === '' || checkin === '' || checkout === '') {
+            alert('All fields must be filled out');
+            return false;
+        }
+
+        // Additional validation logic can be added here
+
+        return true;
+    }
+
+    function handleSubmit() {
+        if (validateForm()) {
+            window.location.href = 'payment_options.html';
+        }
+
+        return false; // Prevents the form from submitting normally
+    }
+</script>
+
+</body>
+</html>

@@ -1,94 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Restaurant Menu</title>
     <style>
+        /* ตำแหน่งของ CSS ใน head หรือใน style tag ภายใน head */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0'); /* เปลี่ยนเส้นทางไปยังภาพพื้นหลังที่คุณต้องการใช้ */
-            background-size: cover; /* ปรับขนาดภาพให้เต็มหน้าจอ */
-            background-position: center; /* จัดตำแหน่งภาพที่วางในกลางหน้าจอ */
-            background-repeat: no-repeat; /* ไม่ซ้ำภาพพื้นหลัง */
+            background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0');
+            background-size: cover;
+            background-position: center 20%;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
-           
         }
 
         body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); 
-        z-index: -1;
-    }
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: -1;
+        }
 
         nav {
-        padding: 50px;
-        background-color: #45523F;
-        width: 1330px;
-        
-      }
+            padding: 50px;
+            background-color: #45523F;
+            width: 1330;
+        }
 
-      .cart-img {
-        width: 45px;
-        margin-left: 85%;
-        margin-top: 20px;
-      }
+        .cart-img {
+            width: 45px;
+            margin-left: 85%;
+            margin-top: 20px;
+        }
 
-      .container .logo {
-        margin-right:100px ;
-        
-        
-      }
-      .nav-bar1 {
-         background-color: #fff;
-         color: #C4A621;
-         padding: 15px;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         width: 650px;
-         margin-left: 350px;
-         
-         
+        .container .logo {
+            margin-right: 150px;
+        }
 
-      }
+        .nav-bar1 {
+            background-color: #fff;
+            color: #C4A621;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 650px;
+            margin-left: 350px;
+        }
 
-      .logo {
-         font-size: 1.5rem;
-         font-weight: bold;
-         color: white;
-         text-decoration: none;
-         
-      }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
 
-      .menu {
-         list-style: none;
-         display: flex;
-         margin-top: 32px;
-         margin-right: 150px;
-         
-      }
+        .menu {
+            list-style: none;
+            display: flex;
+            margin-top: 32px;
+            margin-right: 150px;
+        }
 
-      .menu li {
-         margin: 0 15px;
-         font-size: 1.5rem;
-         margin-left: 40px;
-         
-      }
+        .menu li {
+            margin: 0 15px;
+            font-size: 1.5rem;
+            margin-left: 40px;
+        }
 
-      .menu a {
-         text-decoration: none;
-         color: #C4A621;
-         font-weight: bold;
-         font-size: 1rem;
-      }
+        .menu a {
+            text-decoration: none;
+            color: #C4A621;
+            font-weight: bold;
+            font-size: 1rem;
+        }
 
         .container {
             width: 100%;
@@ -96,14 +89,8 @@
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
-            
-            
             justify-content: 20px;
             text-align: center;
-            
-            
-            
-                    
         }
 
         .container h1 {
@@ -113,12 +100,8 @@
             color: #fff; 
         }
 
-    
-
-        
-
         .frame {
-            background-color: rgba(240, 240, 240, 0.3); /* ปรับค่า alpha (0.8) ตามต้องการ */
+            background-color: rgba(240, 240, 240, 0.3);
             padding: 60px;
             margin: 0 auto;
             display: flex;
@@ -126,139 +109,115 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            bottom: 750px; /* ปรับตามความต้องการ */
-            z-index: 1; /* ให้เป็นชั้นบนสุด */
-                    
-        }
-
- 
-
-       
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 10px;
-            margin-left: 20px;
-        }
-
-        .booking-form {
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        .table-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .table-box {
-            background-color: #45523F;
-            color: #fff; 
-            padding: 10px;
-            text-align: center;
-            cursor: pointer; /* เพิ่ม cursor: pointer เพื่อแสดงว่าเป็นองค์ประกอบที่สามารถคลิกได้ */
-        }
-
-        .table-box.selected {
-            background-color: #C4A621; /* เปลี่ยนสีเป็นสีเหลืองเมื่อถูกเลือก */
-        }
-
-        .table-box:last-child {
-            margin-right: 0;
-        }
-
-        .table-box.booked {
-             background-color: red; /* หรือสไตล์อื่น ๆ ที่คุณต้องการสำหรับโต๊ะที่ถูกจอง */
-        }
-
-
-        .booking-form {
-            max-width: 400px;
-            margin: 0 auto;
-            margin-right: 325px;
-            max-width: 400px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
             bottom: 750px;
             z-index: 1;
-            
+        }
+    </style>
+
+     <style>
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .booking-box {
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            margin-top: 50px;
-            background-color: rgba(240, 240, 240, 0.4);
-            
-            
-            
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
         }
-
-        
-
+        .box img {
+            width: 100%; /* ทำให้รูปภาพทั้งหมดเต็มกว้างของ div */
+            height: auto; /* ป้องกันการบีบอัดรูปภาพ */
+            margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่างของรูปภาพ */
+        }
+        .box:hover {
+    background-color: rgba(196, 166, 33, 0.8); /* ใช้สีเหมือนกับ #C4A621 แต่ใส่ alpha transparency */
+    cursor: pointer;
+}
 
     </style>
 </head>
+
+
 <body>
     <nav>
         <a href="#">
-            <img src="img/shopping(1)" alt="Cart" class="cart-img">
+            <img src="img/shopping.png" alt="Cart" class="cart-img">
         </a>
-            <div class="nav-bar">
-                
-                <div class="nav-bar1">
-                    <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png" class="logo">
-            
-                    <ul class="menu">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">MENU</a></li>
-                        <li><a href="#">ORDER</a></li>
-                    </ul>
-                    
-                </div>
+        <div class="nav-bar">
+            <div class="nav-bar1">
+                <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#">ORDER</a></li>
+                </ul>
             </div>
+        </div>
     </nav>
+
   
 </head>
-
 <body>
+   <!-- เริ่มmenuตรงนี้ -->
     <style>
         .heading {
             text-align: center;
         }
-    
         .heading h3 {
-            font-size: 3em; 
+            font-size: 2em; 
+            color: white;
         }
         .heading p span {
-        font-size: 1.5em; 
-        margin-top: 10px;
+        font-size: 2em; 
+        margin-top:5px;
+        color: white;
     }
     </style>
     <div class="heading">
    <h3>Menu</h3>
-   <p><span>All Menu</span></p>
+   <p><span>ALL DISHES</span></p>
 </div>
-if(value<0)
-<div class="box-container"></div>
-    <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-    <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
-    <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
-    <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-    <a href="quick_view.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
-    <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-    <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-    <div class="name"><?= $fetch_products['name']; ?></div>
-    <div class="flex">
-       <div class="price"><span>$</span><?= $fetch_products['price']; ?></div>
-       <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-    </div>
+<div class="container mt-4">
+    <div class="box-container" id="productContainer">
+        <!-- Product items will be added here dynamically -->
 </div>
+</div>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    fetch('http://localhost:8100/menu') // เปลี่ยน URL ตรงนี้
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('productContainer');
+
+            if (data.length > 0) {
+                data.forEach(menuItem => {
+                    const box = document.createElement('div');
+                    box.className = 'box';
+
+                    const content = `
+                        <img src="${menuItem.image_url}" alt="${menuItem.menu_name}">
+                        <p><strong>Menu ID:</strong> ${menuItem.menu_id}</p>
+                        <p><strong>Menu Name:</strong> ${menuItem.menu_name}</p>
+                        <p><strong>Price:</strong> ${menuItem.price}</p>
+                    `;
+
+                    box.innerHTML = content;
+                    container.appendChild(box);
+                });
+            } else {
+                // If no menu items, display "No menu items"
+                const noMenuItemMessage = document.createElement('p');
+                noMenuItemMessage.textContent = 'No menu items';
+                container.appendChild(noMenuItemMessage);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+</script>
     
 </body>
 

@@ -174,19 +174,31 @@
     window.onload = setRoomDetails;
 
     function validateForm() {
-        var fname = document.getElementById('fname').value;
-        var lname = document.getElementById('lname').value;
-        var email = document.getElementById('email').value;
-        var phone = document.getElementById('phone').value;
-        var checkin = document.getElementById('checkin').value;
-        var checkout = document.getElementById('checkout').value;
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var checkin = document.getElementById('checkin').value;
+            var checkout = document.getElementById('checkout').value;
 
-        if (fname === '' || lname === '' || email === '' || phone === '' || checkin === '' || checkout === '') {
-            alert('All fields must be filled out');
+            if (fname === '' || lname === '' || email === '' || phone === '' || checkin === '' || checkout === '') {
+                alert('All fields must be filled out');
+                return false;
+            }
+
+            if (fname === '' || lname === '' || checkin === '' || checkout === '' || !isNaN(fname) || !isNaN(lname)) {
+                alert('First Name, Last Name, Check In, and Check Out are required fields, and First Name, Last Name cannot be numbers');
+            return false;
+            }
+            if (typeof email !== 'string') {
+            alert('Email must be a string');
             return false;
         }
 
-        // Additional validation logic can be added here
+        if (isNaN(phone) || !Number.isInteger(parseFloat(phone))) {
+            alert('Phone must be a valid integer');
+            return false;
+        }
 
         return true;
     }

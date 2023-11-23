@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Payment Options</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
             margin: 0;
             padding: 0;
             display: flex;
@@ -15,6 +22,7 @@
             height: 100vh;
             background-color: #f4f4f4;
         }
+
         .container {
             display: flex;
             max-width: 800px;
@@ -53,6 +61,10 @@
         .payment-method:hover {
             background-color: #f0f0f0;
         }
+        
+        .payment-method i {
+        font-size: 24px; /* Adjust the size as needed */
+    }
     </style>
 </head>
 <body>
@@ -63,11 +75,11 @@
 
         <div class="payment-methods">
             <div class="payment-method" onclick="selectPayment('credit-card')">
-                <img src="credit-card-icon.png" alt="Credit Card">
+                <i class="far fa-credit-card"></i>
                 <p>Credit Card</p>
             </div>
             <div class="payment-method" onclick="selectPayment('qr-code')">
-                <img src="qr-code-icon.png" alt="QR Code">
+                <i class="fas fa-qrcode"></i>
                 <p>QR Code</p>
             </div>
         </div>
@@ -87,3 +99,4 @@
 
 </body>
 </html>
+

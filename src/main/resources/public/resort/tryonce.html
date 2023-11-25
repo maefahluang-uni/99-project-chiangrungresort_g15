@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ <title>About Us and Booking From</title>
+ <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .section__description {
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .section__title {
+      margin-bottom: 20px;
+    }
+
+    .section__subtitle {
+      margin-bottom: 20px;
+    }
+
+    .section__text {
+      margin-bottom: 20px;
+    }
+
+    .section__link {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .footer__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+
+    .footer__logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer__col {
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    .footer__socials {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .footer__links {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer__link {
+      margin-bottom: 10px;
+    }
+
+    .footer__bar {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+    }
+    
+ </style>
+</head>
+<body>
+ <section class="about-us">
+    <div class="container">
+      <div class="section__container">
+        <div class="section__description">
+          Chiangrung Park is a good choice for any successful business persons to invest in a housing project in clean and green area at the top-north location of Thailand.
+        </div>
+        <div class="booking-form">
+          <form>
+            <div class="form-row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                 <span class="form-label">Adults</span>
+                 <div class="input-group">
+                    <button type="button" class="btn btn-outline-secondary" onclick="decrement('adults')">&#8722;</button>
+                    <input class="form-control text-center" type="text" id="adults" value="1" readonly>
+                    <button type="button" class="btn btn-outline-secondary" onclick="increment('adults')">&#43;</button>
+                 </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                 <span class="form-label">Children</span>
+                 <div class="input-group">
+                    <button type="button" class="btn btn-outline-secondary" onclick="decrement('Children')">&#8722;</button>
+                    <input class="form-control text-center" type="text" id="Children" value="1" readonly>
+                    <button type="button" class="btn btn-outline-secondary" onclick="increment('Children')">&#43;</button>
+                 </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                 <span class="form-label">Rooms</span>
+                 <div class="input-group">
+                    <button type="button" class="btn btn-outline-secondary" onclick="decrement('rooms')">&#8722;</button>
+                    <input class="form-control text-center" type="text" id="rooms" value="1" readonly>
+                    <button type="button" class="btn btn-outline-secondary" onclick="increment('rooms')">&#43;</button>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                 <label for="checkin">Check-in</label>
+                 <input class="form-control" type="date" id="checkin">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                 <label for="checkout">Check-out</label>
+                 <input class="form-control" type="date" id="checkout">
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+ </section>
+ <script>
+    function increment(elementId) {
+      const element = document.getElementById(elementId);
+      element.value = Number(element.value) + 1;
+    }
+
+    function decrement(elementId) {
+      const element = document.getElementById(elementId);
+      element.value = Number(element.value) - 1;
+    }
+ </script>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,14 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Restaurant Menu</title>
     <style>
-        
-        /* ตำแหน่งของ CSS ใน head หรือใน style tag ภายใน head */
         body {
             font-family: Arial, sans-serif;
             background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0');
@@ -33,7 +29,6 @@
         nav {
             padding: 50px;
             background-color: #45523F;
-            width: 1330;
         }
 
         .cart-img {
@@ -83,6 +78,20 @@
             font-weight: bold;
             font-size: 1rem;
         }
+         .heading {
+         text-align: center;
+         color: white;
+         margin-top: 20px; /* Adjust the margin-top value as needed */
+
+        }
+
+.heading h3 {
+    margin-bottom: 10px; /* Adjust the margin-bottom value as needed */
+}
+
+.heading p {
+    margin: 0;
+}
 
         .container {
             width: 100%;
@@ -90,13 +99,12 @@
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
-            justify-content: 20px;
             text-align: center;
         }
 
         .container h1 {
             text-align: center;
-            margin-bottom: 850px;
+            margin-bottom: 20px;
             margin-left: 50px;
             color: #fff; 
         }
@@ -110,42 +118,147 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            bottom: 750px;
+            bottom: 20px;
             z-index: 1;
         }
-    </style>
 
-     <style>
         .box-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            justify-content: space-around;
         }
 
         .box {
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 200px;
+            background-color: white;
+            padding: 30px;
+            margin: 30px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(25% - 40px); /* Adjust the percentage as needed */
+            margin-bottom: 20px;
         }
         .box img {
-            width: 100%; /* ทำให้รูปภาพทั้งหมดเต็มกว้างของ div */
-            height: auto; /* ป้องกันการบีบอัดรูปภาพ */
-            margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่างของรูปภาพ */
+            width: 100%;
+            height: 150px; /* Set a fixed height for the images */
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-bottom: 10px;
         }
-        .box:hover {
-    background-color: rgba(196, 166, 33, 0.8); /* ใช้สีเหมือนกับ #C4A621 แต่ใส่ alpha transparency */
+        .quantity-button {
+    background-color: white;
+    color: #C4A621;
+    border: none;
     cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%; /* กำหนดให้อยู่ตรงกลางแนวตั้ง */
+    right: 50%; /* เพิ่มบรรทัดนี้ */
+    transform: translate(-50%, -50%);
+}
+.quantity {
+    position: absolute;
+    width: 24px;
+    height: 75px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: -0.022em;
+
+    color: #C4A621;
+}
+.quantity-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 40px;
+    height: 20px;
+
+    background: #FFFFFF;
+    border: 2px solid #C4A621;
 }
 
-    </style>
-</head>
+.quantity-button.decrement .arrow {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    transform: matrix(-1, -0.02, 0.01, -1, 0, 0);
+}
 
+.quantity-button.increment .arrow {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    transform: rotate(90deg);
+}
+
+.quantity-button.decrement .arrow {
+    bottom: 0;
+    transform: rotate(270deg)
+
+}
+
+        @media only screen and (max-width: 768px) {
+            .box {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .box {
+                width: calc(100% - 40px);
+            }
+        }
+
+        
+        .summary-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .summary-box {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value (0.8 in this case) */
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(33.33% - 40px);
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+        .total-amount {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .summary-button {
+            background-color: #C4A621;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
 
 <body>
     <nav>
         <a href="#">
             <img src="img/shopping.png" alt="Cart" class="cart-img">
+            <span id="cartQuantity">(0)</span>
         </a>
+        <div class="box-container" id="cartContainer"></div>
+
         <div class="nav-bar">
             <div class="nav-bar1">
                 <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
@@ -158,55 +271,58 @@
         </div>
     </nav>
 
-  
-</head>
-<body>
-   <!-- เริ่มmenuตรงนี้ -->
-    <style>
-        .heading {
-            text-align: center;
-        }
-        .heading h3 {
-            font-size: 2em; 
-            color: white;
-        }
-        .heading p span {
-        font-size: 2em; 
-        margin-top:5px;
-        color: white;
-    }
-    </style>
     <div class="heading">
-   <h3>Menu</h3>
-   <p><span>ALL DISHES</span></p>
-</div>
-<div class="container mt-4">
-    <div class="box-container" id="productContainer">
-        <!-- Product items will be added here dynamically -->
-</div>
-</div>
-<script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    fetch('http://localhost:8100/menu') // เปลี่ยน URL ตรงนี้
-        .then(response => response.json())
-        .then(data => {
+        <h3>Menu</h3>
+        <p><span>ALL DISHES</span></p>
+    </div>
+
+    <div class="container mt-4">
+        <div class="box-container" id="productContainer">
+            <!-- Product items will be added here dynamically -->
+        </div>
+    </div>
+    
+    <div class="summary-container">
+        <div class="summary-box" id="summaryBox">
+            <p class="total-amount" id="totalAmount">Total Amount: $0.00</p>
+            <button class="summary-button" onclick="addToCartSummary()">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            // สร้างข้อมูลเมนู
+            const menuData = [
+    { menu_id: 1, menu_name: 'ยำปลาดุกฟู', price: 10.99, image_url: 'https://i0.wp.com/blog.samanthasmommy.com/wp-content/uploads/2019/01/%E0%B8%A2%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%9F%E0%B8%B9-1.jpg?w=600&ssl=1' },
+     {menu_id: 2,menu_name:'jefhgryf',price:20.00,image_url:'https://scontent.fbkk5-4.fna.fbcdn.net/v/t39.30808-6/325150920_931750014477270_2720032080259854017_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHFz-L8O3QozxkD8g_nSuay1drkgY5PBBnV2uSBjk8EGVsi6sH_9JA9TJZbwOepmms1S90uX1kzwQwVkK26HdVU&_nc_ohc=OsJbfRvNLgAAX80c7pv&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfBR1ipeXoocjfOvDCHmTJNYC0OnlvTmZplW4RG7xhjCEw&oe=6566F1A1'},
+     {menu_id: 3,menu_name:'nhjdfgyuwgefui',price:30.00,image_url:'https://cheewajit.com/app/uploads/2019/06/%E0%B8%A2%E0%B8%B3%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%94%E0%B8%B2%E0%B8%A7-cover.jpg'},
+     {menu_id: 4,menu_name:'khyg67g6di',price:40.00,image_url:'https://www.unileverfoodsolutions.co.th/dam/global-ufs/mcos/SEA/calcmenu/recipes/TH-recipes/red-meats-&-red-meat-dishes/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AA%E0%B8%B1%E0%B8%9A/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AA%E0%B8%B1%E0%B8%9A_header.jpg'},
+];
+
             const container = document.getElementById('productContainer');
 
-            if (data.length > 0) {
-                data.forEach(menuItem => {
+            if (menuData.length > 0) {
+                menuData.forEach(menuItem => {
                     const box = document.createElement('div');
                     box.className = 'box';
 
                     const content = `
-                        <img src="${menuItem.image_url}" alt="${menuItem.menu_name}">
-                        <p><strong>Menu ID:</strong> ${menuItem.menu_id}</p>
-                        <p><strong>Menu Name:</strong> ${menuItem.menu_name}</p>
-                        <p><strong>Price:</strong> ${menuItem.price}</p>
+                        <div class="box-content">
+                            <img src="${menuItem.image_url}" alt="${menuItem.menu_name}">
+                            <p class="menu-name">${menuItem.menu_name}</p>
+                            <p class="price">Price:${menuItem.price} THB</p>
+                            <div class="quantity-box">
+                                <button class="quantity-button decrement" onclick="updateQuantity(${menuItem.menu_id}, 'decrement')">
+                                    <span class="arrow">&#9667;</span>
+                                </button>
+                                <span class="quantity" id="quantity_${menuItem.menu_id}">0</span>
+                                <button class="quantity-button increment" onclick="updateQuantity(${menuItem.menu_id}, 'increment')">
+                                    <span class="arrow">&#9667;</span>
+                                </button>
+                            </div>
+                        </div>
                     `;
-
                     box.innerHTML = content;
                     container.appendChild(box);
                 });
@@ -216,10 +332,91 @@
                 noMenuItemMessage.textContent = 'No menu items';
                 container.appendChild(noMenuItemMessage);
             }
-        })
-        .catch(error => console.error('Error:', error));
-</script>
-    
-</body>
+        });
 
+        function updateQuantity(menuId, action) {
+            const quantityElement = document.getElementById(`quantity_${menuId}`);
+            let currentQuantity = parseInt(quantityElement.textContent);
+
+            if (action === 'increment') {
+                currentQuantity++;
+            } else if (action === 'decrement' && currentQuantity > 0) {
+                currentQuantity--;
+            }
+
+            quantityElement.textContent = currentQuantity;
+
+            // เรียกใช้ฟังก์ชันเพื่ออัปเดต total amount เมื่อมีการเปลี่ยนแปลง
+            updateTotalAmount();
+        }
+        
+        function updateTotalAmount() {
+            const quantityElements = document.querySelectorAll('[id^="quantity_"]');
+            let totalAmount = 0;
+
+            quantityElements.forEach(element => {
+                const menuId = element.id.split('_')[1];
+                const quantity = parseInt(element.textContent);
+                const menuItem = menuData.find(item => item.menu_id === parseInt(menuId));
+                totalAmount += quantity * menuItem.price;
+            });
+
+            // แสดง total amount ที่คำนวณได้
+            const totalAmountElement = document.querySelector('.total-amount');
+            totalAmountElement.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
+        }
+
+        function addToCartSummary() {
+    const cartData = [];
+    const quantityElements = document.querySelectorAll('.quantity'); // เปลี่ยนจาก '[id^="quantity_"]' เป็น '.quantity'
+
+    quantityElements.forEach(element => {
+        const menuId = element.id.split('_')[1];
+        const quantity = parseInt(element.textContent);
+
+        if (quantity > 0) {
+            const menuItem = menuData.find(item => item.menu_id === parseInt(menuId));
+            const cartItem = { ...menuItem, quantity };
+            cartData.push(cartItem);
+        }
+    });
+
+    // แสดง alert หลังจากกดปุ่ม Add to Cart
+    cartData.forEach(item => {
+        alert(`Added ${item.quantity} ${item.menu_name}(s) to the cart`);
+    });
+
+    // เรียกใช้ฟังก์ชันเพื่ออัปเดต total amount ในกรณีที่มีการเพิ่มรายการลงในตะกร้า
+    updateTotalAmount();
+}
+
+       function addToCartSummary() {
+    const cartData = [];
+    const quantityElements = document.querySelectorAll('.quantity');
+
+    quantityElements.forEach(element => {
+        const menuId = element.id.split('_')[1];
+        const quantity = parseInt(element.textContent);
+
+        if (quantity > 0) {
+            const menuItem = menuData.find(item => item.menu_id === parseInt(menuId));
+            const cartItem = { ...menuItem, quantity };
+            cartData.push(cartItem);
+        }
+    });
+
+    // แสดง alert หลังจากกดปุ่ม Add to Cart
+    cartData.forEach(item => {
+        alert(`Added ${item.quantity} ${item.menu_name}(s) to the cart`);
+    });
+
+    // เรียกใช้ฟังก์ชันเพื่ออัปเดต total amount ในกรณีที่มีการเพิ่มรายการลงในตะกร้า
+    updateTotalAmount();
+}
+        // ตัวอย่างฟังก์ชันที่เปลี่ยนหน้าไปที่ cart.html เมื่อคลิกที่รูปภาพ
+        document.getElementById('cartLink').addEventListener('click', function() {
+            window.location.href = 'cart.html';
+        });
+    </script>
+</body>
 </html>

@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      function increment(id) {
+          var input = document.getElementById(id);
+          var value = parseInt(input.value, 10);
+          value = isNaN(value) ? 0 : value;
+          value++;
+          input.value = value;
+      }
+  
+      function decrement(id) {
+          var input = document.getElementById(id);
+          var value = parseInt(input.value, 10);
+          value = isNaN(value) ? 0 : value;
+          if (value > 1) {
+              value--;
+              input.value = value;
+          }
+      }
+  </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -12,27 +36,31 @@
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
-
+ 
 :root {
-  --primary-color: #0d200ec4;
-  --secondary-color: #f6ac0f;
+  --secondary-color: #153d09;
   --text-dark: #0f172a;
   --text-light: #64748b;
-  --extra-light: #ffffff;
+  --extra-light: rgb(9, 52, 0)
   --white: #ffffff;
   --max-width: 1200px;
   --header-font: "Playfair Display", serif;
 }
 
 * {
-  padding: 0;
-  margin: 0;
+  p.section__subheader {
+    background: white;
+}
   box-sizing: border-box;
+}
+element.style {
+    height: 400px;
+    width: 300px;
 }
 
 .section__container {
   max-width: var(--max-width);
-  margin: auto;
+  margin-bottom: 100;
   padding: 5rem 1rem;
 }
 
@@ -41,13 +69,15 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-light);
+
 }
 
 .section__header {
   font-size: 3rem;
   font-weight: 800;
   font-family: var(--header-font);
-  color: var(--text-dark);
+  color: #480909;
+  background: #ebf4e7;
 }
 
 .section__description {
@@ -59,18 +89,19 @@
   padding: 0.75rem 2rem;
   font-size: 1rem;
   color: var(--white);
-  background-color: var(--secondary-color);
+  background-color: #65b440;
   outline: none;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} 
 
 .section__nav {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-direction: row;
 }
 
 .section__nav span {
@@ -81,8 +112,120 @@
   transition: 0.3s;
 }
 
+
 .section__nav span:hover {
   background-color: var(--secondary-color);
+}
+
+.booking-form {
+    background-color: #081e02c4;
+    -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    height: 1000px;
+}
+
+.booking-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+    background-color: #b9ffa5c4;
+    border-radius: 4px;
+    border: none;
+    height: 40px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+::before {
+    background: rgb(1, 37, 1);
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+    color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+    color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control::placeholder {
+    color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+    color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+    position: absolute;
+    right: 0px;
+    bottom: 4px;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+    pointer-events: none;
+    color: rgba(62, 72, 92, 0.3);
+    font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+    content: '\279C';
+    display: block;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+    display: inline-block;
+    color: #3e485c;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-left: 7px;
+}
+
+.booking-form .submit-btn {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(104, 217, 118);
+    font-weight: 700;
+    padding: 14px 30px;
+    border-radius: 4px;
+    border: none;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+    opacity: 0.9;
+}
+
+.booking-cta {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.booking-cta h1 {
+    font-size: 52px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+}
+
+.booking-cta p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .logo {
@@ -139,12 +282,6 @@ nav {
   background-color: var(--extra-light);
 }
 
-.nav__menu__btn {
-  font-size: 1.5rem;
-  color: var(--text-dark);
-  cursor: pointer;
-}
-
 .nav__links {
   list-style: none;
   position: absolute;
@@ -175,7 +312,7 @@ nav {
 
 .header {
   padding-block: 5rem;
-  background-image: url("https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/366704874_267813429340833_4735117681639780634_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=d_QiGPtUcfAAX_od9Cp&_nc_ht=scontent.fbkk14-1.fna&oh=00_AfCB5YW8QmGWdyMgflNgLBomIHHs2MyeuJiBq25Dj1N5nQ&oe=654785F8");
+  background-image: url("https://chiangrungpark.com/wp-content/uploads/2023/02/DSC5353-2-3-1.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -201,11 +338,6 @@ nav {
   line-height: 7rem;
   font-family: var(--header-font);
   color: var(--white);
-}
-
-
-.booking {
-  background-color: var(--primary-color);
 }
 
 .booking__container form {
@@ -239,26 +371,6 @@ nav {
 
 .input__group input::placeholder {
   color: var(--text-light);
-}
-
-.about {
-  position: relative;
-  isolation: isolate;
-}
-
-.about::before {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  right: 0;
-  height: 75%;
-  width: 100%;
-  background-image: url("assets/about-bg.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0.05;
-  z-index: -1;
 }
 
 .about__container {
@@ -316,68 +428,6 @@ nav {
   margin-bottom: 2rem;
 }
 
-.room__container {
-  padding-block: 5rem;
-}
-
-.room__container :is(.section__subheader, .section__header) {
-  padding-inline: 1rem;
-  text-align: center;
-}
-
-.room__grid {
-  max-width: 1500px;
-  margin-inline: auto;
-  margin-top: 4rem;
-  display: grid;
-  gap: 0 1rem;
-}
-
-.room__card img {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.room__card__details {
-  margin-inline: 1rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  background-color: var(--white);
-  transform: translateY(-50%);
-  border-radius: 5px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.room__card__details h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: var(--text-dark);
-}
-
-.room__card__details p {
-  color: var(--text-light);
-}
-
-.room__card__details h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--secondary-color);
-}
-
-.room__card__details h3 span {
-  font-size: 0.8rem;
-}
-
-.intro {
-  position: relative;
-  isolation: isolate;
-  background-color: var(--primary-color);
-}
-
 .intro::before {
   position: absolute;
   content: "";
@@ -416,150 +466,6 @@ nav {
   margin-top: 4rem;
   display: grid;
   gap: 2rem;
-}
-
-.feature__card span {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
-  color: var(--secondary-color);
-}
-
-.feature__card h4 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  counter-reset: var(--text-dark);
-}
-
-.feature__card p {
-  color: var(--text-light);
-}
-
-.menu {
-  background-color: var(--extra-light);
-}
-
-.menu__header {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.menu__items {
-  list-style: none;
-  margin-block: 4rem;
-  display: grid;
-  gap: 1rem 4rem;
-}
-
-.menu__items li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.menu__items li:hover {
-  background-color: var(--primary-color);
-}
-
-.menu__items img {
-  max-width: 100px;
-  border-radius: 2px;
-}
-
-.menu__items h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: var(--text-dark);
-  transition: 0.3s;
-}
-
-.menu__items p {
-  max-width: 400px;
-  color: var(--text-light);
-  transition: 0.3s;
-}
-
-.menu__items li:hover :is(h4, p) {
-  color: var(--white);
-}
-
-.menu__images {
-  margin-bottom: 4rem;
-  display: grid;
-  gap: 1rem;
-}
-
-.menu__images img {
-  border-radius: 5px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.menu__banner {
-  list-style: none;
-  padding: 4rem 2rem;
-  display: grid;
-  gap: 2rem;
-  text-align: center;
-  background-color: var(--primary-color);
-  border-radius: 5px;
-}
-
-.menu__banner span {
-  font-size: 3.5rem;
-  color: var(--secondary-color);
-}
-
-.menu__banner h4 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.menu__banner p {
-  color: var(--text-light);
-}
-
-.news__grid {
-  margin-top: 4rem;
-  display: grid;
-  gap: 2rem 1rem;
-}
-
-.news__card img {
-  margin-bottom: 2rem;
-  border-radius: 5px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.news__card__title {
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.news__card__title p {
-  font-weight: 500;
-  color: var(--text-light);
-}
-
-.news__card h4 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: var(--text-dark);
-}
-
-.news__card p {
-  color: var(--text-light);
 }
 
 .footer {
@@ -657,6 +563,7 @@ nav {
   font-size: 0.8rem;
   color: var(--text-light);
   text-align: center;
+  
 }
 
 @media (width > 480px) {
@@ -677,18 +584,6 @@ nav {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .menu__images {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .menu__banner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .news__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -702,7 +597,7 @@ nav {
   nav {
     position: static;
     padding-inline: 1rem;
-    background-color: var(--primary-color);
+    background-color: rgb(3, 37, 3);
   }
 
   .nav__bar {
@@ -764,32 +659,9 @@ nav {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .menu__header {
-    flex-direction: row;
-  }
-
-  .menu__items {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .menu__images {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .menu__banner {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .news__header {
-    flex-direction: row;
-  }
-
-  .news__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .footer__container {
     grid-template-columns: 2fr repeat(2, 1fr);
+    background-color: #0b2303;
   }
 
   .footer__col:first-child {
@@ -798,22 +670,439 @@ nav {
 }
 
 @media (width > 1024px) {
-  .about__grid {
-    gap: 2rem;
-  }
+  .section {
+    position: relative;
+    height: 100vh;
+}
 
-  .room__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
+.section .section-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 
-  .menu__images {
-    gap: 2rem;
-  }
+.about-us-content {
+    padding: 2rem;
+    text-align: left;
+    position: relative; /* Adjust position if needed */
+    z-index: 0; /* Keep it behind the bar */
+}
 
-  .news__grid {
-    gap: 2rem;
-  }
+.about-us-content p {
+    margin-bottom: 5rem; /* Add margin to separate lines */
+}
+
+.about-us-content p:first-child {
+    font-size: 1rem; /* Example font size for the "About Us" title */
+    font-weight: 300; /* Example font weight for the "About Us" title */
+}
+.section {
+      position: relative;
+      height: 100vh;
+    }
+
+    .section .section-center {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .booking-form {
+      background-color: #fff;
+      padding: 50px 20px;
+      -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      max-width: 500px;
+    }
+
+    .booking-form .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group button {
+      font-size: 14px;
+      width: 30px;
+      /* ปรับขนาดของปุ่ม */
+    }
+    .booking-form .form-control {
+      background-color: #ebecee;
+      border-radius: 4px;
+      border: none;
+      height: 40px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #3e485c;
+      font-size: 14px;
+    }
+
+    .booking-form .form-control::-webkit-input-placeholder {
+      color: rgba(66, 235, 184, 0.3);
+    }
+
+    .booking-form .form-control:-ms-input-placeholder {
+      color: rgba(62, 72, 92, 0.3);
+    }
+
+    .booking-form .form-control::placeholder {
+      color: rgba(62, 72, 92, 0.3);
+    }
+
+    .booking-form input[type="date"].form-control:invalid {
+      color: rgba(70, 92, 62, 0.3);
+    }
+
+    .booking-form select.form-control {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .booking-form select.form-control+.select-arrow {
+      position: absolute;
+      right: 0px;
+      bottom: 4px;
+      width: 32px;
+      line-height: 32px;
+      height: 32px;
+      text-align: center;
+      pointer-events: none;
+      color: rgba(62, 72, 92, 0.3);
+      font-size: 14px;
+    }
+
+    .booking-form select.form-control+.select-arrow:after {
+      content: '\279C';
+      display: block;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .booking-form .form-label {
+      display: inline-block;
+      color: #0d3715;
+      font-weight: 700;
+      margin-bottom: 6px;
+      margin-left: 7px;
+    }
+
+    .booking-form .submit-btn {
+      display: inline-block;
+      color: #fff;
+      background-color: rgb(0, 60, 23);
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 4px;
+      border: none;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+
+    .booking-form .submit-btn:hover,
+    .booking-form .submit-btn:focus {
+      opacity: 0.9;
+    }
+
+    .booking-cta {
+      margin-top: 80px;
+      margin-bottom: 30px;
+    }
+
+    .booking-cta h1 {
+      font-size: 52px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .booking-cta p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* About Us styling */
+    .about-us-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .about-us-bar {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .about-us-content {
+      max-width: 700px;
+    }
+
+    .about-us-content h2 {
+      color: #fff;
+    }
+    .room__grid {
+      max-width: 1500px;
+      margin-inline: auto;
+      margin-top: 4rem;
+      display: grid;
+    }
+    
+    .room__card img {
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .room__card__details {
+      margin-inline: 1rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background-color: var(--white);
+      transform: translateY(-50%);
+      border-radius: 5px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .room__card__details h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      font-family: var(--header-font);
+      color: var(--text-dark);
+    }
+    
+    .room__card__details p {
+      color: var(--text-light);
+    }
+    
+    .room__card__details h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+    
+    .room__card__details h3 span {
+      font-size: 0.8rem;
+    }
+    .room__card img {
+  width: 300px; /* กำหนดความกว้างเป็น 200px */
+  height: 350px; /* กำหนดความสูงเป็น 150px */
+  object-fit: cover; /* ให้รูปภาพทำการตัดต่อหรือย่อขนาดเพื่อให้พอดีกับพื้นที่ที่กำหนด */
+}
+.room__grid {
+      display: flex;
+      flex-direction: row; /* Arrange items horizontally */
+      overflow-x: scroll; /* Add horizontal scroll if the content overflows */
+    }
+
+    .room__card {
+      width: 300px;
+      padding-left: 30px;
+      margin-right: 10px; /* Adjust spacing between cards */
+    }
+.section {
+      position: relative;
+      height: 100vh;
+    }
+
+    .section .section-center {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    
+
+    body {
+      background-color: #ebf4e7;
+      /* เปลี่ยนสีเขียวตามที่คุณต้องการ */
+      margin: 0;
+      /* เพื่อลบ margin ที่ถูกกำหนดไว้โดยอัตโนมัติ */
+      padding: 0;
+      /* เพื่อลบ padding ที่ถูกกำหนดไว้โดยอัตโนมัติ */
+    }
+
+    #booking {
+      font-family: 'Montserrat', sans-serif;
+      --primary-color: rgba(8, 30, 2, 0.769);
+      background-size: cover;
+      background-position: center;
+    }
+
+    #booking::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
+
+    .booking-form {
+      background-color: #fff;
+      padding: 50px 20px;
+      -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      max-width: 500px;
+    }
+
+    .booking-form .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group button {
+      font-size: 14px;
+      width: 30px;
+      /* ปรับขนาดของปุ่ม */
+    }
+
+    .booking-form .form-control {
+      background-color: #ebecee;
+      border-radius: 4px;
+      border: none;
+      height: 40px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #3e485c;
+      font-size: 14px;
+    }
+
+    .booking-form .form-control::-webkit-input-placeholder {
+      color: rgba(62, 72, 92, 0.3);
+    }
+
+    .booking-form .form-control:-ms-input-placeholder {
+      color: rgba(62, 72, 92, 0.3);
+    }
+
+    .booking-form .form-control::placeholder {
+      color: rgba(62, 72, 92, 0.3);
+    }
+
+    .booking-form input[type="date"].form-control:invalid {
+      color: rgba(62, 72, 92, 0.3);
+    }
+
+    .booking-form select.form-control {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .booking-form select.form-control+.select-arrow {
+      position: absolute;
+      right: 0px;
+      bottom: 4px;
+      width: 32px;
+      line-height: 32px;
+      height: 32px;
+      text-align: center;
+      pointer-events: none;
+      color: rgba(62, 72, 92, 0.3);
+      font-size: 14px;
+    }
+
+    .booking-form select.form-control+.select-arrow:after {
+      content: '\279C';
+      display: block;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .booking-form .form-label {
+      display: inline-block;
+      color: #3e485c;
+      font-weight: 700;
+      margin-bottom: 6px;
+      margin-left: 7px;
+    }
+
+    .booking-form .submit-btn {
+      display: inline-block;
+      color: #fff;
+      background-color: #1e7e34;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 4px;
+      border: none;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+
+    .booking-form .submit-btn:hover,
+    .booking-form .submit-btn:focus {
+      opacity: 0.9;
+    }
+
+    .booking-cta {
+      margin-top: 80px;
+      margin-bottom: 30px;
+    }
+
+    .booking-cta h1 {
+      font-size: 52px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .booking-cta p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* About Us styling */
+    .about-us-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .about-us-bar {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .about-us-content {
+      max-width: 600px;
+    }
+
+    .about-us-content h2 {
+      color: #fff;
+    }
+    element.style {
+    margin-top: 250px;
+}
+element.style {
+    height: 300px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+}     
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: nowrap;
+    -ms-flex-align: stretch;
+    align-items: baseline;
+    width: 100%;
+    justify-content: space-evenly;
+    align-content: stretch;
+}      
 }
   </style>
   <body>
@@ -821,8 +1110,7 @@ nav {
       <div class="nav__bar">
         <div class="nav__header">
           <div class="logo nav__logo">
-            <div>C</div>
-            <span>CHIANGRUNG<br />PARK</span>
+            <div><img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png" class="fusion-standard-logo"></div>
           </div>
           <div class="nav__menu__btn" id="menu-btn">
             <i class="ri-menu-line"></i>
@@ -844,355 +1132,157 @@ nav {
         <h1> CHIANGRUNG PARK</h1>
       </div>
     </header>
+    <body>
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="booking" class="section" style="height: 350px;">
+      <div class="section-center">
+        <div class="container" style="
+        margin-left: 50px; 
+        margin-left: 40px;
+        margin-right: 20px;">
+          <div class="row">
+            <div class="col-md-7 col-md-push-5" style="height: 200px; width: 530px;">
+                <div class="booking-cta" style="margin-top: 40px;" >
+                  <h1 style=" text-align: center;">ABOUT US</h1>
+                  <p> Discover Our Underground
+                    Chiang Rung Park is a project with a Nordic style resort, restaurant and cafe inspired by European architecture. Give a warm feeling Simple, good atmosphere, cool, with a view of the surrounding mountains. It is only 20 minutes from Chiang Rai city and is close to many tourist attractions.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-md-pull-7" style="height: 300px;
+              width: 330px;">
+                <div class="booking-form" style="height: 270px;
+                width: 440px;
+                margin-top: 10px;
+                margin-left: 200px;">
+                  <form>
+                    <div class="row" style="margin-top: -30px;">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <span class="form-label">Check In</span>
+                          <input class="form-control" type="date" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <span class="form-label">Check out</span>
+                          <input class="form-control" type="date" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <span class="form-label">Rooms</span>
+                          <div class="input-group">
+                            <button type="button" class="btn btn-outline-secondary" onclick="decrement('Rooms')" style="
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                        ">&#8722;</button>
+                            <input class="form-control text-center" type="text" id="Rooms" value="1" readonly>
+                            <button type="button" class="btn btn-outline-secondary" onclick="increment('Rooms')" style="
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;">&#43;</button>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="form-group">
+                            <span class="form-label">Adults</span>
+                            <div class="input-group">
+                              <button type="button" class="btn btn-outline-secondary" onclick="decrement('adults')" style="
+                              padding-left: 10px;
+                              padding-right: 10px;
+                              padding-top: 10px;
+                              padding-bottom: 10px;
+                          ">&#8722;</button>
+                              <input class="form-control text-center" type="text" id="adults" value="1" readonly>
+                              <button type="button" class="btn btn-outline-secondary" onclick="increment('adults')" style="
+                              padding-left: 10px;
+                              padding-right: 10px;
+                              padding-top: 10px;
+                              padding-bottom: 10px;
+                          ">&#43;</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <span class="form-label">Children</span>
+                          <div class="input-group">
+                            <button type="button" class="btn btn-outline-secondary" onclick="decrement('Children')"style="
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                        ">&#8722;</button>
+                            <input class="form-control text-center" type="text" id="Children" value="1" readonly>
+                            <button type="button" class="btn btn-outline-secondary" onclick="increment('Children')"style="
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                        ">&#43;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-btn" style="
+                    padding-left: 100px;">
+                      <button class="submit-btn">Check availability</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+  </body>
+  </html>
 
-    <section class="booking">
-      <div class="section__container booking__container">
-        <form action="/">
-          <div class="input__group">
-            <label for="arrival">Arrival Date</label>
-            <input type="text" placeholder="Your Arrival Date" />
-          </div>
-          <div class="input__group">
-            <label for="departure">Departure Date</label>
-            <input type="text" placeholder="Your Departure Date" />
-          </div>
-          <div class="input__group">
-            <label for="guests">Guests</label>
-            <input type="text" placeholder="No Of Guests" />
-          </div>
-          <button class="btn">Check Availability</button>
-        </form>
-      </div>
-    </section>
+<p class="section__subheader" style="text-align: center;padding-top: 15px;">ROOMS</p>
+<h2 class="section__header" style="text-align: center;">Hand Picked Rooms</h2>
+<div class="room__grid" style="height: 400px;margin-left: 200px;">
+  <div class="room__card" style=" width: 300px;padding-left: 30px;">
+    <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/DJI_08111.jpg" alt="room">
+  </div>
+  <div class="room__card" style=" width: 300px;">
+    <img src="https://chiangrungpark.com/wp-content/uploads/2023/04/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3.jpg" alt="room">
+  </div>
+  <div class="room__card">
+    <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/DSC54531.jpg" alt="room">
+  </div>
+</div>
 
-    <section class="about" id="about">
-      <div class="section__container about__container">
-        <div class="about__grid">
-          <div class="about__image">
-            <img src="assets/about-1.jpg" alt="about" />
-          </div>
-          <div class="about__card">
-            <span><i class="ri-user-line"></i></span>
-            <h4>Strong Team</h4>
-            <p>
-              Unlocking Hospitality Excellence And Ensures Your Perfect Stay
-            </p>
-          </div>
-          <div class="about__image">
-            <img src="assets/about-2.jpg" alt="about" />
-          </div>
-          <div class="about__card">
-            <span><i class="ri-calendar-check-line"></i></span>
-            <h4>Luxury Room</h4>
-            <p>Experience Unrivaled Luxury at Our Exquisite Luxury Rooms</p>
-          </div>
-        </div>
-        <div class="about__content">
-          <p class="section__subheader">ABOUT US</p>
-          <h2 class="section__header">Discover Our Underground</h2>
-          <p class="section__description">
-            Welcome to a hidden realm of extraordinary accommodations where
-            luxury, comfort, and adventure converge. Our underground hotels
-            offer an unparalleled escape from the ordinary, inviting you to
-            explore a subterranean world of wonders.
-          </p>
-          <button class="btn">Book Now</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="room__container" id="room">
-      <p class="section__subheader">ROOMS</p>
-      <h2 class="section__header">Hand Picked Rooms</h2>
-      <div class="room__grid">
-        <div class="room__card">
-          <img src="assets/room-1.jpg" alt="room" />
-          <div class="room__card__details">
-            <div>
-              <h4>Extra Floating House</h4>
-              <p>1 bed room and 1 living room (2-4 people)</p>
-            </div>
-            <h3>4000<span>/night</span></h3>
-          </div>
-        </div>
-        <div class="room__card">
-          <img src="assets/room-2.jpg" alt="room" />
-          <div class="room__card__details">
-            <div>
-              <h4>Floating House</h4>
-              <p>1 bed room with Jacuzzi (2-3 people)</p>
-            </div>
-            <h3>2400<span>/night</span></h3>
-          </div>
-        </div>
-        <div class="room__card">
-          <img src="assets/room-3.jpg" alt="room" />
-          <div class="room__card__details">
-            <div>
-              <h4>Luxury Penthouse</h4>
-              <p>
-                Top-tier accommodations usually on the highest floors of a
-                hotel.
-              </p>
-            </div>
-            <h3>$799<span>/night</span></h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="intro">
-      <div class="section__container intro__container">
-        <div class="intro__cotent">
-          <p class="section__subheader">INTRO VIDEO</p>
-          <h2 class="section__header">Meet With Our Luxury Place</h2>
-          <p class="section__description">
-            Whether you're seeking a cozy and exclusive hideaway or an immersive
-            journey beneath the surface, Hotel Miranda promises to be an
-            unforgettable stay, where the depths of comfort and excitement await
-            your arrival.
-          </p>
-          <button class="btn">Book Now</button>
-        </div>
-        <div class="intro__video">
-          <video src="assets/luxury.mp4" autoplay muted loop></video>
-        </div>
-      </div>
-    </section>
-
-    <section class="section__container feature__container" id="feature">
-      <p class="section__subheader">FACILITIES</p>
-      <h2 class="section__header">Core Features</h2>
-      <div class="feature__grid">
-        <div class="feature__card">
-          <span><i class="ri-thumb-up-line"></i></span>
-          <h4>Have High Rating</h4>
-          <p>
-            We take pride in curating a selection of hotels that consistently
-            receive high ratings and positive reviews.
-          </p>
-        </div>
-        <div class="feature__card">
-          <span><i class="ri-time-line"></i></span>
-          <h4>Quite Hours</h4>
-          <p>
-            We understand that peace and uninterrupted rest are essential for a
-            rejuvenating experience.
-          </p>
-        </div>
-        <div class="feature__card">
-          <span><i class="ri-map-pin-line"></i></span>
-          <h4>Best Location</h4>
-          <p>
-            At our hotel booking website, we take pride in offering
-            accommodations in the most prime and sought-after locations.
-          </p>
-        </div>
-        <div class="feature__card">
-          <span><i class="ri-close-circle-line"></i></span>
-          <h4>Free Cancellation</h4>
-          <p>
-            We understand that travel plans can change unexpectedly, which is
-            why we offer the flexibility of free cancellation.
-          </p>
-        </div>
-        <div class="feature__card">
-          <span><i class="ri-wallet-line"></i></span>
-          <h4>Payment Options</h4>
-          <p>
-            Our hotel booking website offers a range of convenient payment
-            options to suit your preferences.
-          </p>
-        </div>
-        <div class="feature__card">
-          <span><i class="ri-coupon-line"></i></span>
-          <h4>Special Offers</h4>
-          <p>
-            Whether you're planning a romantic getaway, or a business trip, our
-            carefully curated special offers cater to all your needs.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu" id="menu">
-      <div class="section__container menu__container">
-        <div class="menu__header">
-          <div>
-            <p class="section__subheader">MENU</p>
-            <h2 class="section__header">Our Food Menu</h2>
-          </div>
-          <div class="section__nav">
-            <span><i class="ri-arrow-left-line"></i></span>
-            <span><i class="ri-arrow-right-line"></i></span>
-          </div>
-        </div>
-        <ul class="menu__items">
-          <li>
-            <img src="assets/menu-1.jpg" alt="menu" />
-            <div class="menu__details">
-              <h4>Fggs & Bacon</h4>
-              <p>
-                It is a culinary innovation that puts a unique spin on the
-                beloved breakfast combination.
-              </p>
-            </div>
-          </li>
-          <li>
-            <img src="assets/menu-2.jpg" alt="menu" />
-            <div class="menu__details">
-              <h4>Tea or Coffee</h4>
-              <p>
-                A classic choice for your daily dose of comfort and calmness.
-              </p>
-            </div>
-          </li>
-          <li>
-            <img src="assets/menu-3.jpg" alt="menu" />
-            <div class="menu__details">
-              <h4>Chia Oatmeal</h4>
-              <p>
-                Our Chia Oatmeal is a wholesome nutrient-packed breakfast
-                delight.
-              </p>
-            </div>
-          </li>
-          <li>
-            <img src="assets/menu-4.jpg" alt="menu" />
-            <div class="menu__details">
-              <h4>Fruit Parfait</h4>
-              <p>
-                Our Fruit Parfait is a delightful culinary masterpiece of
-                freshness and flavor.
-              </p>
-            </div>
-          </li>
-          <li>
-            <img src="assets/menu-5.jpg" alt="menu" />
-            <div class="menu__details">
-              <h4>Marmalade Selection</h4>
-              <p>
-                Our Marmalade Selection is a delectable medley of vibrant,
-                handcrafted citrus preserves.
-              </p>
-            </div>
-          </li>
-          <li>
-            <img src="assets/menu-6.jpg" alt="menu" />
-            <div class="menu__details">
-              <h4>Cheese Plate</h4>
-              <p>
-                Our cheese plate is a masterpiece that celebrates rich and
-                diverse world of cheeses.
-              </p>
-            </div>
-          </li>
-        </ul>
-        <div class="menu__images">
-          <img src="assets/menu-7.jpg" alt="menu" />
-          <img src="assets/menu-8.jpg" alt="menu" />
-          <img src="assets/menu-9.jpg" alt="menu" />
-        </div>
-        <ul class="menu__banner">
-          <li>
-            <span><i class="ri-file-text-line"></i></span>
-            <h4>84k</h4>
-            <p>Projects are Completed</p>
-          </li>
-          <li>
-            <span><i class="ri-user-line"></i></span>
-            <h4>10M</h4>
-            <p>Active Around World</p>
-          </li>
-          <li>
-            <span><i class="ri-function-line"></i></span>
-            <h4>02k</h4>
-            <p>Categories Served</p>
-          </li>
-          <li>
-            <span><i class="ri-lightbulb-flash-line"></i></span>
-            <h4>100M</h4>
-            <p>Ideas Raised Funds</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section__container news__container" id="news">
-      <div class="news__header">
-        <div>
-          <p class="section__subheader">BLOG</p>
-          <h2 class="section__header">News Feeds</h2>
-        </div>
-        <div class="section__nav">
-          <span><i class="ri-arrow-left-line"></i></span>
-          <span><i class="ri-arrow-right-line"></i></span>
-        </div>
-      </div>
-      <div class="news__grid">
-        <div class="news__card">
-          <img src="assets/news-1.jpg" alt="news" />
-          <div class="news__card__title">
-            <p>25th March 2022</p>
-            <p>By Emily</p>
-          </div>
-          <h4>Exploring Local Culinary Gems: A Foodie's Guide.</h4>
-          <p>
-            Join Emily as she takes you on a gastronomic adventure through the
-            neighborhood surrounding our hotel.
-          </p>
-        </div>
-        <div class="news__card">
-          <img src="assets/news-2.jpg" alt="news" />
-          <div class="news__card__title">
-            <p>15th June 2022</p>
-            <p>By David</p>
-          </div>
-          <h4>Balancing Mind, Body, and Soul at Our Hotel.</h4>
-          <p>
-            Discover holistic spa treatments, fitness facilities, and
-            mindfulness practices that will leave you feeling refreshed.
-          </p>
-        </div>
-        <div class="news__card">
-          <img src="assets/news-3.jpg" alt="news" />
-          <div class="news__card__title">
-            <p>08th August 2022</p>
-            <p>By Sarah</p>
-          </div>
-          <h4>Exploring Outdoor Activities Near Our Hotel.</h4>
-          <p>
-            From hiking and biking trails to water sports and wildlife
-            encounters, she highlights ways to experience nature's wonders.
-          </p>
-        </div>
-      </div>
-    </section>
-
+<button class="btn"style="
+margin-left: 650px;">Book Now</button>
+</div>
     <footer class="footer">
-      <div class="section__container footer__container">
+      <div class="section__container footer__container" style="
+      margin-top: 10px;
+      height: 410px;
+      width: 3000px;">
         <div class="footer__col">
           <div class="logo footer__logo">
-            <div>H</div>
-            <span>HOTEL<br />MIRANDA</span>
+            <span>CHIANGRUNG<br />PARK</span>
           </div>
           <p class="section__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-            laudantium unde. Doloremque eaque debitis laborum labore voluptates
-            iste molestiae consectetur.
+            Chiangrung Park is a good choice for any successful business persons to invest in a housing project in clean and green area at the top-north location of Thailand
           </p>
           <ul class="footer__socials">
             <li>
-              <a href="#"><i class="ri-youtube-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-            <li>
               <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-linkedin-fill"></i></a>
             </li>
           </ul>
         </div>
@@ -1201,8 +1291,6 @@ nav {
           <div class="footer__links">
             <li><a href="#">Online Booking</a></li>
             <li><a href="#">Room Customization</a></li>
-            <li><a href="#">Virtual Tours</a></li>
-            <li><a href="#">Special Offers</a></li>
             <li><a href="#">Concierge Services</a></li>
             <li><a href="#">Customer Support</a></li>
           </div>
@@ -1214,32 +1302,20 @@ nav {
               <span><i class="ri-phone-fill"></i></span>
               <div>
                 <h5>Phone Number</h5>
-                <p>+91 9876543210</p>
-              </div>
-            </li>
-            <li>
-              <span><i class="ri-record-mail-line"></i></span>
-              <div>
-                <h5>Email</h5>      
-                <p>info@hotelmiranda.com</p>
+                <p>094 371 0994</p>
               </div>
             </li>
             <li>
               <span><i class="ri-map-pin-2-fill"></i></span>
               <div>
                 <h5>Location</h5>
-                <p>First St. NYC</p>
+                <p>524 Pa Sak Ngam Village, Dong Mahawan Subdistrict, Wiang Chiang Rung District, Chiang Rai 57350</p>
               </div>
             </li>
           </div>
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2023 Web Design Mastery. All rights reserved.
+        Chiangrung park & restaurant.
       </div>
-    </footer>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
-  </body>
-</html>
+    </footer> 

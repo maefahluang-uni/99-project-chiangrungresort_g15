@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Food Website</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: 'Arial', sans-serif;
+      }
+
+      .cart-img {
+        width: 45px;
+        margin-left: 85%;
+        margin-top: 20px;
+      }
+     
+
+      .container {
+         max-width: 1140px;
+         margin: 0 auto;
+         display: flex;
+         
+
+      }
+      .container .logo {
+        margin-right:100px ;
+        
+        
+      }
+
+      nav {
+        padding: 50px;
+        background-color: #45523F;
+        margin-left: 0px;
+      }
+
+      
+
+     
+      .nav-bar {
+         background-color: #fff;
+         color: #C4A621;
+         padding: 15px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         width: 650px;
+         margin-left: 350px;
+         
+
+      }
+
+      .logo {
+         font-size: 1.5rem;
+         font-weight: bold;
+         color: white;
+         text-decoration: none;
+         
+      }
+
+      .menu {
+         list-style: none;
+         display: flex;
+         margin-top: 32px;
+         
+      }
+
+      .menu li {
+         margin: 0 15px;
+         font-size: 1.5rem;
+      }
+
+      .menu a {
+         text-decoration: none;
+         color: #C4A621;
+         font-weight: bold;
+         font-size: 1rem;
+         margin-top: 7px;
+      }
+
+      .hero {
+         padding: 50px 0;
+         
+         text-align: center;
+         margin-left: 350px;
+      }
+
+      
+
+      .hero-description {
+         max-width: 800px;
+         margin-top: 100px;
+         display: block;
+         align-items: center;
+         flex-direction: column;
+         padding: 50px 10px;
+         
+      }
+
+
+      .hero-description h2{
+         margin-top: 20px;
+         padding: 0px 0px;
+         top: 100px;
+         left: 20px;
+         margin-right:30px ;
+      }
+
+
+      .hero-description p {
+         margin-top: 20px;
+         padding: 20px 0px;
+         top: 100px;
+         left: 20px;
+      }
+
+      .hero-img {
+         display: flex;
+         justify-content: flex-end;
+         margin: 80px;
+         margin-top: 120px;  
+         
+      }
+
+      .hero-img img {
+         max-width: 1000px;
+         height:290px;
+         border-radius: 5px;
+         
+         
+         
+         
+         
+      }
+
+      .hero-btn {
+         display: inline-block;
+         background-color: #1E1E1E;
+         color: #C4A621;
+         padding: .5rem 1rem;
+         border-radius: 5px;
+         text-decoration: none;
+         font-weight: bold;
+         margin-top: 20px;
+         margin-left:50px ;
+      }
+
+      
+
+      .blog {
+        margin-left: 250px;
+
+    
+      }
+
+      .blog .container {
+        display: flex;
+        margin-right:300px ;
+        
+      }
+
+      .blog-con {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            column-gap: 5rem;
+            
+            
+    
+      }
+
+      
+      
+      .blog-item img {
+            width: 300px; 
+            margin-top: 80px;
+            border-radius: 5%;
+           
+            
+            
+        
+        
+      }
+      
+
+      .footer-top .container {
+         margin-left: 200px;
+         background-color: #C8AF3D;
+         color: #000000;
+         padding: 10px;
+         list-style: none;
+         display: flex;
+         border-radius: 1%;
+         margin-top: 50px;
+
+      }
+     
+      .footer-top-item {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .footer-top-con {
+         margin-left: 40px;
+         background-color: #fff;
+         color: #000000;
+         padding: 10px;
+         display: flex;
+         text-transform: lowercase;
+         border-radius: 2%;   
+         
+      }
+
+      footer-top {
+        padding: 40px;
+        background-color: #67624c;
+        
+      }
+
+   </style>
+</head>
+<body>
+
+   <nav>
+      <a href="#">
+          <img src="img/shopping.png" alt="Cart" class="cart-img">
+          <span id="cartQuantity">(0)</span>
+      </a>
+      <div class="box-container" id="cartContainer"></div>
+        <div class="nav-bar">
+            
+            <div class="container">
+                <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png" class="logo">
+        
+                <ul class="menu">
+                    
+                    <!-- Home Page -->
+                  <a href="http://127.0.0.1:5501/src/main/resources/public/resort/front.html#menu">HOME</a>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#">ORDER</a></li>
+                </ul>
+                
+            </div>
+        </div>
+   </nav>
+
+   <section class="hero">
+      <div class="container">
+            <div class="hero-description">
+                <h2>Recommend</h2>
+                <p>CRISP CATFISH FLAKE SALAD</p>
+                <a href="#" class="hero-btn">See Menu</a>
+                <a href="#" class="hero-btn">Booking Table</a>
+            </div>
+         <div class="hero-img">
+                <img src="https://www.shutterstock.com/th/blog/wp-content/uploads/sites/16/2018/11/shutterstock_446808100.jpg?w=960&h=600&crop=1" alt="Food Image">
+         </div>
+      </div>
+   </section>
+   <section class="blog">
+    <h3>Spacial Promotion</h3>
+        <div class="container">
+            
+            
+
+            <div class="blog-con">
+                <div class="blog-item">
+                    <img src="https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/377779576_285598684228974_960726434113724207_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IuYDNVsuAvgAX8FAAtS&_nc_ht=scontent.fbkk5-6.fna&oh=00_AfAB5gZokF9h4w1D6kkNaCFQwhr9yOiZyJyB5F4V-DPVOA&oe=655C3591" alt="open-cafe">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/387860835_300234576098718_1643118963636753692_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4eKlHJxFPsMAX9ps-O6&_nc_ht=scontent.fbkk5-6.fna&oh=00_AfCgIRiBw1JbPlh1VUSDmUj1GS5DEAzcmkWTLTJIm-1mPw&oe=655B8BB6" alt="water">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://scontent.fbkk5-4.fna.fbcdn.net/v/t39.30808-6/385920189_296759479779561_1760087449645226993_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=xQbhUqjgezMAX_tUosa&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfAzKoP8dVxMIf6n-CLghGxUtjcHdltKCydNo3wZ7OP80A&oe=655D1A28" alt="cafe">
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+ 
+    <div class="footer-top">
+        <div class="container">
+            <h3>Contact Hotel</h3>
+            <div class="footer-top-item">
+                <div class="footer-top-con">
+                    <p>Email: excemple@gmail.com</p>
+
+                </div>
+
+                <div class="footer-top-con">
+                    <p>Open-Close: 10.00AM-20.00Pm</p>
+                    
+                </div>
+
+                <div class="footer-top-con">
+                    <p> Phone Hotel :  094 371 0994 </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-buttom"></div>
+
+   
+
+</body>
+</html>

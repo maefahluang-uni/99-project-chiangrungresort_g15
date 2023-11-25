@@ -398,6 +398,7 @@
     quantityElements.forEach(element => {
         const menuId = element.id.split('_')[1];
         const quantity = parseInt(element.textContent);
+        
 
         if (quantity > 0) {
             const menuItem = menuData.find(item => item.menu_id === parseInt(menuId));

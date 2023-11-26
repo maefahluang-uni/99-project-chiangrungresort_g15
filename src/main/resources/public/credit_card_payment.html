@@ -83,7 +83,7 @@
 
 <div class="container">
     <h2>Credit Card Payment</h2>
-    <form id="creditCardForm">
+    <form action="/credit-card-payment" method="POST">
         <label for="cardNumber">Card Number:</label>
         <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
         
@@ -102,15 +102,13 @@
 
 <script>
     function submitCreditCardPayment() {
-        var cardNumber = document.getElementById('cardNumber').value;
-        var cvv = document.getElementById('cvv').value;
-        var expirationDate = document.getElementById('expirationDate').value;
+    var cardNumber = document.getElementById('cardNumber').value;
+    var cvv = document.getElementById('cvv').value;
+    var expirationDate = document.getElementById('expirationDate').value;
 
-        alert('Credit Card Payment Submitted!');
-    }
+    document.getElementById('cardNumber').form.submit();
+}
 
-    document.getElementById('paymentDate').innerText = new Date().toLocaleDateString();
-    
 </script>
 
 </body>

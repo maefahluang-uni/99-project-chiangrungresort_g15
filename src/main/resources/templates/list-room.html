@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room List</title>
+
+    <!-- Add Bootstrap stylesheet link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4">Room List</h1>
+        
+        <!-- Link to add a new room -->
+        <a href="/add-room" class="btn btn-primary mb-3">Add New Room</a>
+        
+        <!-- Display the list of rooms in a table -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Room Name</th>
+                    <th>Room Price</th>
+                    <th>Room Description</th>
+                    <th>Room Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the list of rooms and display each one -->
+                <tr th:each="room : ${rooms}">
+                    <td th:text="${room.id}"></td>
+                    <td th:text="${room.roomName}"></td>
+                    <td th:text="${room.roomPrice}"></td>
+                    <td th:text="${room.roomDescription}"></td>
+                    <td th:text="${room.roomImage}"></td>
+                    <td>
+                        <!-- Link to delete a room -->
+                        <a th:href="@{'/delete-room/' + ${room.id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Link to delete all rooms -->
+        <a href="/delete-room" class="btn btn-danger">Delete All Rooms</a>
+    </div>
+
+    <!-- Add Bootstrap JavaScript and Popper.js (required for Bootstrap's JavaScript) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

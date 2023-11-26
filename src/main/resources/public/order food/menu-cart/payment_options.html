@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Payment Options</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rIPjvV88ZeoAX-ACWlj&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAeQKHOUhvUwxhNSqkD0k50iMOcEuFgPmI9ptU7L1lGHw&oe=655EBEA0');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .payment-options {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .payment-method:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .payment-method i {
+        font-size: 24px; /* Adjust the size as needed */
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="payment-options">
+        <h2>Select Payment Method</h2>
+
+        <div class="payment-methods">
+            <div class="payment-method" onclick="selectPayment('credit-card')">
+                <i class="far fa-credit-card"></i>
+                <p>Credit Card</p>
+            </div>
+            <div class="payment-method" onclick="selectPayment('qr-code')">
+                <i class="fas fa-qrcode"></i>
+                <p>QR Code</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectPayment(paymentMethod) {
+        // You can redirect the user to the appropriate payment page based on their selection
+        if (paymentMethod === 'credit-card') {
+            window.location.href = 'credit_card_payment.html';
+        } else if (paymentMethod === 'qr-code') {
+            window.location.href = 'qr_code_payment.html';
+        }
+        function selectPayment(paymentMethod) {
+    // You can redirect the user to the appropriate payment page based on their selection
+    if (paymentMethod === 'credit-card') {
+        window.location.href = 'credit_card_payment.html';
+    } else if (paymentMethod === 'qr-code') {
+        window.location.href = 'qr.html';  // แก้ไปยัง 'qr.html' ที่คุณต้องการ
+    }
+}
+
+    }
+    function paymentMethod() {
+    // ทำการเชื่อมโยงไปยังหน้า Check Out ใน index.html
+    window.location.href = 'qr_code_payment.html#';
+}
+</script>
+
+</body>
+</html>
+

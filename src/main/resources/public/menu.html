@@ -262,9 +262,9 @@ nav {
           <div class="nav-bar1">
               <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
               <ul class="menu">
-                  <a href="index.html">HOME</a>
-                  <li><a href="#">MENU</a></li>
-                  <li><a href="#">ORDER</a></li>
+                  <li><a href="mainmenu.html">HOME</a></li>
+                  <li><a href="menu.html">MENU</a></li>
+                  <li><a href="cart.html">ORDER</a></li>
               </ul>
               
               <a href="cart.html">
@@ -288,119 +288,7 @@ nav {
   </div>
 
 </body>
-<script >
-    let shopItemsData = [
-    {
-      id: "jfhgbvnscs",
-      name: "Sweet Basil",
-      price: 65,
-      desc: "Meat, basil leaves, chili, garlic, fried egg.",
-      img: src= "src/main/images/img-1.jpg",
-    },
-    {
-      id: "ioytrhndcv",
-      name: "Breakfast",
-      price: 60,
-      desc: "Sausage, fried egg, bread.",
-      img: src= "src/main/images/img-2.jpg",
-    },
-    {
-      id: "wuefbncxbsn",
-      name: "Chocolate Mint",
-      price: 55,
-      desc: "Chocolate ,Mint.",
-      img: src= "src/main/images/img-3.jpg",
-    },
-    {
-      id: "thyfhcbcv",
-      name: "Cocktaile",
-      price: 90,
-      desc: "Alcohol,Fruit.",
-      img: src= "src/main/images/img-4.jpg",
-    },
-  ];
-  
-</script>
-<script >
-    let shop = document.getElementById("shop");
-
-let basket = JSON.parse(localStorage.getItem("data")) || [];
-
-let generateShop = () => {
-  return (shop.innerHTML = shopItemsData
-    .map((x) => {
-      let { id, name, price, desc, img } = x;
-      let search = basket.find((x) => x.id === id) || [];
-      return `
-    <div id=product-id-${id} class="item">
-        <img width="220" src=${img} alt="sdd">
-        <div class="details">
-          <h3>${name}</h3>
-          <p>${desc}</p>
-          <div class="price-quantity">
-            <h2>฿ ${price} </h2>
-            <div class="buttons">
-              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-              <div id=${id} class="quantity">
-              ${search.item === undefined ? 0 : search.item}
-              </div>
-              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-    })
-    .join(""));
-};
-
-generateShop();
-
-let increment = (id) => {
-  let selectedItem = id;
-  let search = basket.find((x) => x.id === selectedItem.id);
-
-  if (search === undefined) {
-    basket.push({
-      id: selectedItem.id,
-      item: 1,
-    });
-  } else {
-    search.item += 1;
-  }
-
-  // console.log(basket);
-  update(selectedItem.id);
-  localStorage.setItem("data", JSON.stringify(basket));
-};
-let decrement = (id) => {
-  let selectedItem = id;
-  let search = basket.find((x) => x.id === selectedItem.id);
-
-  if (search === undefined) return;
-  else if (search.item === 0) return;
-  else {
-    search.item -= 1;
-  }
-  update(selectedItem.id);
-  basket = basket.filter((x) => x.item !== 0);
-  // console.log(basket);
-  localStorage.setItem("data", JSON.stringify(basket));
-};
-let update = (id) => {
-  let search = basket.find((x) => x.id === id);
-  // console.log(search.item);
-  document.getElementById(id).innerHTML = search.item;
-  calculation();
-};
-
-let calculation = () => {
-  let cartIcon = document.getElementById("cartAmount");
-  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-};
-
-calculation();
-
-</script>
+<script src="src/Data.js"></script>
+<script src="src/main.js"></script>
 
 </html>

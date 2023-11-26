@@ -1,1337 +1,1500 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="js/script.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-      function increment(id) {
-          var input = document.getElementById(id);
-          var value = parseInt(input.value, 10);
-          value = isNaN(value) ? 0 : value;
-          value++;
-          input.value = value;
-      }
-  
+ <head>
+   <script src="js/script.js"></script>
+   <script src="js/script.js"></script>
+   <script>
+     function increment(id) {
+         var input = document.getElementById(id);
+         var value = parseInt(input.value, 10);
+         value = isNaN(value) ? 0 : value;
+         value++;
+         input.value = value;
+     }
       function decrement(id) {
-          var input = document.getElementById(id);
-          var value = parseInt(input.value, 10);
-          value = isNaN(value) ? 0 : value;
-          if (value > 1) {
-              value--;
-              input.value = value;
-          }
-      }
-  </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Chiangrung | Resort</title>
-  </head>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
- 
+         var input = document.getElementById(id);
+         var value = parseInt(input.value, 10);
+         value = isNaN(value) ? 0 : value;
+         if (value > 1) {
+             value--;
+             input.value = value;
+         }
+     }
+ </script>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   <link
+     href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+     rel="stylesheet"
+   />
+   <link rel="stylesheet" href="styles.css" />
+   <title>Chiangrung | Resort</title>
+ </head>
+ <style>
+   @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 :root {
-  --secondary-color: #153d09;
-  --text-dark: #0f172a;
-  --text-light: #64748b;
-  --extra-light: rgb(9, 52, 0)
-  --white: #ffffff;
-  --max-width: 1200px;
-  --header-font: "Playfair Display", serif;
+ --secondary-color: #153d09;
+ --text-dark: #0f172a;
+ --text-light: #64748b;
+ --extra-light: rgb(9, 52, 0)
+ --white: #ffffff;
+ --max-width: 1200px;
+ --header-font: "Playfair Display", serif;
 }
+
 
 * {
-  p.section__subheader {
-    background: white;
+ p.section__subheader {
+   background: white;
 }
-  box-sizing: border-box;
+ box-sizing: border-box;
 }
 element.style {
-    height: 400px;
-    width: 300px;
+   height: 400px;
+   width: 300px;
 }
+
 
 .section__container {
-  max-width: var(--max-width);
-  margin-bottom: 100;
-  padding: 5rem 1rem;
+ max-width: var(--max-width);
+ margin-bottom: 100;
+ padding: 5rem 1rem;
 }
+
 
 .section__subheader {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-light);
+ margin-bottom: 0.5rem;
+ font-size: 1rem;
+ font-weight: 500;
+ color: var(--text-light);
+
 
 }
+
 
 .section__header {
-  font-size: 3rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: #480909;
-  background: #ebf4e7;
+ font-size: 3rem;
+ font-weight: 800;
+ font-family: var(--header-font);
+ color: #480909;
+ background: #ebf4e7;
 }
+
 
 .section__description {
-  margin-top: 1rem;
-  color: var(--text-light);
+ margin-top: 1rem;
+ color: var(--text-light);
 }
+
 
 .btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  color: var(--white);
-  background-color: #65b440;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-} 
+ padding: 0.75rem 2rem;
+ font-size: 1rem;
+ color: var(--white);
+ background-color: #65b440;
+ outline: none;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+}
+
 
 .section__nav {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-direction: row;
+ margin-left: auto;
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ flex-direction: row;
 }
 
+
 .section__nav span {
-  padding: 10px 15px;
-  font-size: 1.25rem;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: 0.3s;
+ padding: 10px 15px;
+ font-size: 1.25rem;
+ border-radius: 2px;
+ cursor: pointer;
+ transition: 0.3s;
 }
+
+
 
 
 .section__nav span:hover {
-  background-color: var(--secondary-color);
+ background-color: var(--secondary-color);
 }
+
 
 .booking-form {
-    background-color: #081e02c4;
-    -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    height: 1000px;
+   background-color: #081e02c4;
+   -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+   border-radius: 4px;
+   height: 1000px;
 }
+
 
 .booking-form .form-group {
-    position: relative;
-    margin-bottom: 30px;
+   position: relative;
+   margin-bottom: 30px;
 }
+
 
 .booking-form .form-control {
-    background-color: #b9ffa5c4;
-    border-radius: 4px;
-    border: none;
-    height: 40px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: rgb(0, 0, 0);
-    font-size: 14px;
+   background-color: #b9ffa5c4;
+   border-radius: 4px;
+   border: none;
+   height: 40px;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   color: rgb(0, 0, 0);
+   font-size: 14px;
 }
 ::before {
-    background: rgb(1, 37, 1);
+   background: rgb(1, 37, 1);
 }
+
 
 .booking-form .form-control::-webkit-input-placeholder {
-    color: rgba(62, 72, 92, 0.3);
+   color: rgba(62, 72, 92, 0.3);
 }
+
 
 .booking-form .form-control:-ms-input-placeholder {
-    color: rgba(62, 72, 92, 0.3);
+   color: rgba(62, 72, 92, 0.3);
 }
+
 
 .booking-form .form-control::placeholder {
-    color: rgba(62, 72, 92, 0.3);
+   color: rgba(62, 72, 92, 0.3);
 }
+
 
 .booking-form input[type="date"].form-control:invalid {
-    color: rgba(62, 72, 92, 0.3);
+   color: rgba(62, 72, 92, 0.3);
 }
+
 
 .booking-form select.form-control {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
+
 
 .booking-form select.form-control+.select-arrow {
-    position: absolute;
-    right: 0px;
-    bottom: 4px;
-    width: 32px;
-    line-height: 32px;
-    height: 32px;
-    text-align: center;
-    pointer-events: none;
-    color: rgba(62, 72, 92, 0.3);
-    font-size: 14px;
+   position: absolute;
+   right: 0px;
+   bottom: 4px;
+   width: 32px;
+   line-height: 32px;
+   height: 32px;
+   text-align: center;
+   pointer-events: none;
+   color: rgba(62, 72, 92, 0.3);
+   font-size: 14px;
 }
+
 
 .booking-form select.form-control+.select-arrow:after {
-    content: '\279C';
-    display: block;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+   content: '\279C';
+   display: block;
+   -webkit-transform: rotate(90deg);
+   transform: rotate(90deg);
 }
+
 
 .booking-form .form-label {
-    display: inline-block;
-    color: #3e485c;
-    font-weight: 700;
-    margin-bottom: 6px;
-    margin-left: 7px;
+   display: inline-block;
+   color: #3e485c;
+   font-weight: 700;
+   margin-bottom: 6px;
+   margin-left: 7px;
 }
 
+
 .booking-form .submit-btn {
-    display: inline-block;
-    color: #fff;
-    background-color: rgb(104, 217, 118);
-    font-weight: 700;
-    padding: 14px 30px;
-    border-radius: 4px;
-    border: none;
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
+   display: inline-block;
+   color: #fff;
+   background-color: rgb(104, 217, 118);
+   font-weight: 700;
+   padding: 14px 30px;
+   border-radius: 4px;
+   border: none;
+   -webkit-transition: 0.2s all;
+   transition: 0.2s all;
 }
+
 
 .booking-form .submit-btn:hover,
 .booking-form .submit-btn:focus {
-    opacity: 0.9;
+   opacity: 0.9;
 }
+
 
 .booking-cta {
-    margin-top: 80px;
-    margin-bottom: 30px;
+   margin-top: 80px;
+   margin-bottom: 30px;
 }
+
 
 .booking-cta h1 {
-    font-size: 52px;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: 700;
+   font-size: 52px;
+   text-transform: uppercase;
+   color: #fff;
+   font-weight: 700;
 }
+
 
 .booking-cta p {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
+   font-size: 16px;
+   color: rgba(255, 255, 255, 0.8);
 }
+
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  color: var(--text-light);
-  letter-spacing: 2px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ font-weight: 500;
+ color: var(--text-light);
+ letter-spacing: 2px;
 }
 
+
 .logo div {
-  padding-inline: 12px;
-  font-size: 2rem;
+ padding-inline: 12px;
+ font-size: 2rem;
 }
+
 
 img,
 video {
-  width: 100%;
-  display: flex;
+ width: 100%;
+ display: flex;
 }
 
+
 a {
-  text-decoration: none;
+ text-decoration: none;
 }
+
 
 html,
 body {
-  scroll-behavior: smooth;
+ scroll-behavior: smooth;
 }
+
 
 body {
-  font-family: "Poppins", sans-serif;
+ font-family: "Poppins", sans-serif;
 }
+
 
 nav {
-  position: fixed;
-  isolation: isolate;
-  width: 100%;
-  z-index: 9;
+ position: fixed;
+ isolation: isolate;
+ width: 100%;
+ z-index: 9;
 }
+
 
 .nav__bar {
-  position: relative;
-  isolation: isolate;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ position: relative;
+ isolation: isolate;
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .nav__header {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--extra-light);
+ padding: 1rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color: var(--extra-light);
 }
+
 
 .nav__links {
-  list-style: none;
-  position: absolute;
-  padding: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  background-color: var(--white);
-  transform: translateY(-100%);
-  transition: 0.5s;
-  z-index: -1;
+ list-style: none;
+ position: absolute;
+ padding: 2rem;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 2rem;
+ background-color: var(--white);
+ transform: translateY(-100%);
+ transition: 0.5s;
+ z-index: -1;
 }
+
 
 .nav__links.open {
-  transform: translateY(0);
+ transform: translateY(0);
 }
+
 
 .nav__links a {
-  color: var(--text-light);
-  transition: 0.3s;
+ color: var(--text-light);
+ transition: 0.3s;
 }
+
 
 .nav__links a:hover {
-  color: var(--secondary-color);
+ color: var(--secondary-color);
 }
 
+
 .header {
-  padding-block: 5rem;
-  background-image: url("https://chiangrungpark.com/wp-content/uploads/2023/02/DSC5353-2-3-1.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+ padding-block: 5rem;
+ background-image: url("https://chiangrungpark.com/wp-content/uploads/2023/02/DSC5353-2-3-1.jpg");
+ background-position: center center;
+ background-size: cover;
+ background-repeat: no-repeat;
 }
+
+
 
 
 .header__container .section__subheader {
-  color: var(--white);
-  margin-left: 190px;
+ color: var(--white);
+ margin-left: 190px;
 }
+
 
 .header__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
 }
+
 
 .header__container h1 {
-  margin-left: 200px; /* เอา margin ออกเพื่อกำหนดระยะห่างด้วย flex */
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 7rem;
-  font-family: var(--header-font);
-  color: var(--white);
+ margin-left: 200px; /* เอา margin ออกเพื่อกำหนดระยะห่างด้วย flex */
+ font-size: 6rem;
+ font-weight: 700;
+ line-height: 7rem;
+ font-family: var(--header-font);
+ color: var(--white);
 }
+
 
 .booking__container form {
-  max-width: 350px;
-  margin: auto;
-  display: grid;
-  gap: 2rem;
+ max-width: 350px;
+ margin: auto;
+ display: grid;
+ gap: 2rem;
 }
+
 
 .input__group {
-  display: grid;
-  gap: 1rem;
+ display: grid;
+ gap: 1rem;
 }
+
 
 .input__group label {
-  font-weight: 600;
-  color: var(--white);
+ font-weight: 600;
+ color: var(--white);
 }
+
 
 .input__group input {
-  width: 100%;
-  font-size: 1rem;
-  padding: 0.5rem;
-  color: var(--white);
-  background-color: transparent;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid var(--text-light);
-  border-radius: 5px;
+ width: 100%;
+ font-size: 1rem;
+ padding: 0.5rem;
+ color: var(--white);
+ background-color: transparent;
+ outline: none;
+ border: none;
+ border-bottom: 1px solid var(--text-light);
+ border-radius: 5px;
 }
+
 
 .input__group input::placeholder {
-  color: var(--text-light);
+ color: var(--text-light);
 }
+
 
 .about__container {
-  display: grid;
-  gap: 4rem 2rem;
+ display: grid;
+ gap: 4rem 2rem;
 }
+
 
 .about__grid {
-  display: grid;
-  gap: 1rem;
+ display: grid;
+ gap: 1rem;
 }
+
 
 .about__card {
-  height: 100%;
-  padding: 2rem;
-  display: grid;
-  place-content: center;
-  text-align: center;
+ height: 100%;
+ padding: 2rem;
+ display: grid;
+ place-content: center;
+ text-align: center;
 }
+
 
 .about__card span {
-  margin-bottom: 1rem;
-  font-size: 3rem;
-  color: var(--secondary-color);
+ margin-bottom: 1rem;
+ font-size: 3rem;
+ color: var(--secondary-color);
 }
+
 
 .about__card h4 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: var(--text-dark);
+ margin-bottom: 1rem;
+ font-size: 1.5rem;
+ font-weight: 800;
+ font-family: var(--header-font);
+ color: var(--text-dark);
 }
+
 
 .about__card p {
-  color: var(--text-light);
+ color: var(--text-light);
 }
+
 
 .about__card:nth-child(4) {
-  background-color: var(--primary-color);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+ background-color: var(--primary-color);
+ box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .about__card:nth-child(4) :is(h4, p) {
-  color: var(--white);
+ color: var(--white);
 }
+
 
 .about__image img {
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+ height: 100%;
+ object-fit: cover;
+ box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .about__content .section__description {
-  margin-bottom: 2rem;
+ margin-bottom: 2rem;
 }
+
 
 .intro::before {
-  position: absolute;
-  content: "";
-  right: 0;
-  height: 100%;
-  width: calc(100vw / 4);
-  background-color: var(--secondary-color);
-  z-index: -1;
+ position: absolute;
+ content: "";
+ right: 0;
+ height: 100%;
+ width: calc(100vw / 4);
+ background-color: var(--secondary-color);
+ z-index: -1;
 }
+
 
 .intro__container {
-  display: grid;
-  gap: 4rem 2rem;
+ display: grid;
+ gap: 4rem 2rem;
 }
+
 
 .intro__container .section__subheader {
-  color: var(--secondary-color);
+ color: var(--secondary-color);
 }
+
 
 .intro__container :is(.section__header, .section__description) {
-  margin-bottom: 1rem;
-  color: var(--white);
+ margin-bottom: 1rem;
+ color: var(--white);
 }
+
 
 .intro__video {
-  max-width: 450px;
-  margin: auto;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+ max-width: 450px;
+ margin: auto;
+ box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .feature__container :is(.section__subheader, .section__header) {
-  text-align: center;
+ text-align: center;
 }
+
 
 .feature__grid {
-  margin-top: 4rem;
-  display: grid;
-  gap: 2rem;
+ margin-top: 4rem;
+ display: grid;
+ gap: 2rem;
 }
+
 
 .footer {
-  background-color: var(--primary-color);
+ background-color: var(--primary-color);
 }
+
 
 .footer__container {
-  display: grid;
-  gap: 4rem 2rem;
+ display: grid;
+ gap: 4rem 2rem;
 }
+
 
 .footer__logo {
-  margin-bottom: 2rem;
-  color: var(--white);
+ margin-bottom: 2rem;
+ color: var(--white);
 }
+
 
 .footer__logo div {
-  background-color: var(--secondary-color);
+ background-color: var(--secondary-color);
 }
+
 
 .footer__socials {
-  list-style: none;
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+ list-style: none;
+ margin-top: 2rem;
+ display: flex;
+ align-items: center;
+ gap: 1rem;
 }
+
 
 .footer__socials a {
-  padding: 6px 10px;
-  font-size: 1.25rem;
-  color: var(--text-light);
-  background-color: var(--white);
-  border-radius: 100%;
-  cursor: pointer;
-  transition: 0.3s;
+ padding: 6px 10px;
+ font-size: 1.25rem;
+ color: var(--text-light);
+ background-color: var(--white);
+ border-radius: 100%;
+ cursor: pointer;
+ transition: 0.3s;
 }
+
 
 .footer__socials a:hover {
-  color: var(--white);
-  background-color: var(--secondary-color);
+ color: var(--white);
+ background-color: var(--secondary-color);
 }
+
 
 .footer__col h4 {
-  margin-bottom: 2rem;
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: var(--white);
+ margin-bottom: 2rem;
+ font-size: 1.25rem;
+ font-weight: 800;
+ font-family: var(--header-font);
+ color: var(--white);
 }
+
 
 .footer__links {
-  list-style: none;
+ list-style: none;
 }
+
 
 .footer__links li {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+ margin-bottom: 1rem;
+ display: flex;
+ align-items: center;
+ gap: 1rem;
 }
+
 
 .footer__links a {
-  color: var(--text-light);
-  transition: 0.3s;
+ color: var(--text-light);
+ transition: 0.3s;
 }
+
 
 .footer__links a:hover {
-  color: var(--secondary-color);
+ color: var(--secondary-color);
 }
+
 
 .footer__col:last-child .footer__links li {
-  margin-bottom: 2rem;
+ margin-bottom: 2rem;
 }
+
 
 .footer__links span {
-  font-size: 2rem;
-  color: var(--secondary-color);
+ font-size: 2rem;
+ color: var(--secondary-color);
 }
+
 
 .footer__links h5 {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 800;
-  font-family: var(--header-font);
-  color: var(--white);
+ margin-bottom: 0.5rem;
+ font-size: 1rem;
+ font-weight: 800;
+ font-family: var(--header-font);
+ color: var(--white);
 }
+
 
 .footer__links p {
-  color: var(--text-light);
+ color: var(--text-light);
 }
+
 
 .footer__bar {
-  padding: 1rem;
-  font-size: 0.8rem;
-  color: var(--text-light);
-  text-align: center;
-  
-}
+ padding: 1rem;
+ font-size: 0.8rem;
+ color: var(--text-light);
+ text-align: center;
+ }
+
 
 @media (width > 480px) {
-  .about__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+ .about__grid {
+   grid-template-columns: repeat(2, 1fr);
+ }
 
-  .about__image:nth-child(1) {
-    grid-area: 1/2/2/3;
-  }
 
-  .about__image:nth-child(1),
-  .about__card:nth-child(4) {
-    transform: translateY(2rem);
-  }
+ .about__image:nth-child(1) {
+   grid-area: 1/2/2/3;
+ }
 
-  .feature__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  .footer__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+ .about__image:nth-child(1),
+ .about__card:nth-child(4) {
+   transform: translateY(2rem);
+ }
 
-  .footer__col:first-child {
-    grid-column: 1/3;
-  }
+
+ .feature__grid {
+   grid-template-columns: repeat(2, 1fr);
+ }
+
+
+ .footer__container {
+   grid-template-columns: repeat(2, 1fr);
+ }
+
+
+ .footer__col:first-child {
+   grid-column: 1/3;
+ }
 }
+
 
 @media (width > 768px) {
-  nav {
-    position: static;
-    padding-inline: 1rem;
-    background-color: rgb(3, 37, 3);
-  }
+ nav {
+   position: static;
+   padding-inline: 1rem;
+   background-color: rgb(3, 37, 3);
+ }
 }
 
-  @media (width > 768px) {
-    .footer__container {
-    position: static;
-    padding-inline: 1rem;
-    background-color: rgb(3, 37, 3);
-    margin-top: 30px;
-  }
 
-  .nav__bar {
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--white);
-    border-radius: 5px;
-    transform: translateY(50%);
-  }
+ @media (width > 768px) {
+   .footer__container {
+   position: static;
+   padding-inline: 1rem;
+   background-color: rgb(3, 37, 3);
+   margin-top: 30px;
+ }
 
-  .nav__header {
-    padding: 0;
-    background-color: transparent;
-  }
 
-  .nav__menu__btn {
-    display: none;
-  }
+ .nav__bar {
+   max-width: var(--max-width);
+   margin: auto;
+   padding: 1rem 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--white);
+   border-radius: 5px;
+   transform: translateY(50%);
+ }
 
-  .nav__links {
-    width: fit-content;
-    padding: 0;
-    position: static;
-    flex-direction: row;
-    transform: none;
-    background-color: transparent;
-  }
 
-  .booking__container form {
-    max-width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-  }
+ .nav__header {
+   padding: 0;
+   background-color: transparent;
+ }
 
-  .about::before {
-    height: 75%;
-    width: 75%;
-  }
 
-  .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
+ .nav__menu__btn {
+   display: none;
+ }
 
-  .room__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  .intro__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
+ .nav__links {
+   width: fit-content;
+   padding: 0;
+   position: static;
+   flex-direction: row;
+   transform: none;
+   background-color: transparent;
+ }
 
-  .feature__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
-  .footer__container {
-    grid-template-columns: 2fr repeat(2, 1fr);
-    background-color: #0b2303;
-  }
+ .booking__container form {
+   max-width: 100%;
+   grid-template-columns: repeat(4, 1fr);
+   align-items: center;
+ }
 
-  .footer__col:first-child {
-    grid-column: unset;
-  }
+
+ .about::before {
+   height: 75%;
+   width: 75%;
+ }
+
+
+ .about__container {
+   grid-template-columns: repeat(2, 1fr);
+   align-items: center;
+ }
+
+
+ .room__grid {
+   grid-template-columns: repeat(2, 1fr);
+ }
+
+
+ .intro__container {
+   grid-template-columns: repeat(2, 1fr);
+   align-items: center;
+ }
+
+
+ .feature__grid {
+   grid-template-columns: repeat(3, 1fr);
+ }
+
+
+ .footer__container {
+   grid-template-columns: 2fr repeat(2, 1fr);
+   background-color: #0b2303;
+ }
+
+
+ .footer__col:first-child {
+   grid-column: unset;
+ }
 }
+
 
 @media (width > 1024px) {
-  .section {
-    position: relative;
-    height: 100vh;
+ .section {
+   position: relative;
+   height: 100vh;
 }
+
 
 .section .section-center {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+   position: absolute;
+   top: 50%;
+   left: 0;
+   right: 0;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
 }
+
 
 .about-us-content {
-    padding: 2rem;
-    text-align: left;
-    position: relative; /* Adjust position if needed */
-    z-index: 0; /* Keep it behind the bar */
+   padding: 2rem;
+   text-align: left;
+   position: relative; /* Adjust position if needed */
+   z-index: 0; /* Keep it behind the bar */
 }
+
 
 .about-us-content p {
-    margin-bottom: 5rem; /* Add margin to separate lines */
+   margin-bottom: 5rem; /* Add margin to separate lines */
 }
+
 
 .about-us-content p:first-child {
-    font-size: 1rem; /* Example font size for the "About Us" title */
-    font-weight: 300; /* Example font weight for the "About Us" title */
+   font-size: 1rem; /* Example font size for the "About Us" title */
+   font-weight: 300; /* Example font weight for the "About Us" title */
 }
 .section {
-      position: relative;
-      height: 100vh;
-    }
+     position: relative;
+     height: 100vh;
+   }
 
-    .section .section-center {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
 
-    .booking-form {
-      background-color: #fff;
-      padding: 50px 20px;
-      -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-      box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-      border-radius: 4px;
-      max-width: 500px;
-    }
+   .section .section-center {
+     position: absolute;
+     top: 50%;
+     left: 0;
+     right: 0;
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+   }
 
-    .booking-form .form-group {
-      position: relative;
-      margin-bottom: 20px;
-    }
 
-    .input-group button {
-      font-size: 14px;
-      width: 30px;
-      /* ปรับขนาดของปุ่ม */
-    }
-    .booking-form .form-control {
-      background-color: #ebecee;
-      border-radius: 4px;
-      border: none;
-      height: 40px;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      color: #3e485c;
-      font-size: 14px;
-    }
+   .booking-form {
+     background-color: #fff;
+     padding: 50px 20px;
+     -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+     box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+     border-radius: 4px;
+     max-width: 500px;
+   }
 
-    .booking-form .form-control::-webkit-input-placeholder {
-      color: rgba(66, 235, 184, 0.3);
-    }
 
-    .booking-form .form-control:-ms-input-placeholder {
-      color: rgba(62, 72, 92, 0.3);
-    }
+   .booking-form .form-group {
+     position: relative;
+     margin-bottom: 20px;
+   }
 
-    .booking-form .form-control::placeholder {
-      color: rgba(62, 72, 92, 0.3);
-    }
 
-    .booking-form input[type="date"].form-control:invalid {
-      color: rgba(70, 92, 62, 0.3);
-    }
+   .input-group button {
+     font-size: 14px;
+     width: 30px;
+     /* ปรับขนาดของปุ่ม */
+   }
+   .booking-form .form-control {
+     background-color: #ebecee;
+     border-radius: 4px;
+     border: none;
+     height: 40px;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     color: #3e485c;
+     font-size: 14px;
+   }
 
-    .booking-form select.form-control {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
 
-    .booking-form select.form-control+.select-arrow {
-      position: absolute;
-      right: 0px;
-      bottom: 4px;
-      width: 32px;
-      line-height: 32px;
-      height: 32px;
-      text-align: center;
-      pointer-events: none;
-      color: rgba(62, 72, 92, 0.3);
-      font-size: 14px;
-    }
+   .booking-form .form-control::-webkit-input-placeholder {
+     color: rgba(66, 235, 184, 0.3);
+   }
 
-    .booking-form select.form-control+.select-arrow:after {
-      content: '\279C';
-      display: block;
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
-    }
 
-    .booking-form .form-label {
-      display: inline-block;
-      color: #0d3715;
-      font-weight: 700;
-      margin-bottom: 6px;
-      margin-left: 7px;
-    }
+   .booking-form .form-control:-ms-input-placeholder {
+     color: rgba(62, 72, 92, 0.3);
+   }
 
-    .booking-form .submit-btn {
-      display: inline-block;
-      color: #fff;
-      background-color: rgb(0, 60, 23);
-      font-weight: 700;
-      padding: 14px 30px;
-      border-radius: 4px;
-      border: none;
-      -webkit-transition: 0.2s all;
-      transition: 0.2s all;
-    }
 
-    .booking-form .submit-btn:hover,
-    .booking-form .submit-btn:focus {
-      opacity: 0.9;
-    }
+   .booking-form .form-control::placeholder {
+     color: rgba(62, 72, 92, 0.3);
+   }
 
-    .booking-cta {
-      margin-top: 80px;
-      margin-bottom: 30px;
-    }
 
-    .booking-cta h1 {
-      font-size: 52px;
-      text-transform: uppercase;
-      color: #fff;
-      font-weight: 700;
-    }
+   .booking-form input[type="date"].form-control:invalid {
+     color: rgba(70, 92, 62, 0.3);
+   }
 
-    .booking-cta p {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.8);
-    }
 
-    /* About Us styling */
-    .about-us-container {
-      display: flex;
-      justify-content: space-between;
-    }
+   .booking-form select.form-control {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+   }
 
-    .about-us-bar {
-      font-size: 24px;
-      font-weight: bold;
-      color: #fff;
-    }
 
-    .about-us-content {
-      max-width: 700px;
-    }
+   .booking-form select.form-control+.select-arrow {
+     position: absolute;
+     right: 0px;
+     bottom: 4px;
+     width: 32px;
+     line-height: 32px;
+     height: 32px;
+     text-align: center;
+     pointer-events: none;
+     color: rgba(62, 72, 92, 0.3);
+     font-size: 14px;
+   }
 
-    .about-us-content h2 {
-      color: #fff;
-    }
-    .room__grid {
-      max-width: 1500px;
-      margin-inline: auto;
-      margin-top: 4rem;
-      display: grid;
-    }
-    
-    .room__card img {
-      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .room__card__details {
-      margin-inline: 1rem;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      background-color: var(--white);
-      transform: translateY(-50%);
-      border-radius: 5px;
-      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .room__card__details h4 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-      font-weight: 800;
-      font-family: var(--header-font);
-      color: var(--text-dark);
-    }
-    
-    .room__card__details p {
-      color: var(--text-light);
-    }
-    
-    .room__card__details h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--secondary-color);
-    }
-    
-    .room__card__details h3 span {
-      font-size: 0.8rem;
-    }
-    .room__card img {
-  width: 300px; /* กำหนดความกว้างเป็น 200px */
-  height: 350px; /* กำหนดความสูงเป็น 150px */
-  object-fit: cover; /* ให้รูปภาพทำการตัดต่อหรือย่อขนาดเพื่อให้พอดีกับพื้นที่ที่กำหนด */
+
+   .booking-form select.form-control+.select-arrow:after {
+     content: '\279C';
+     display: block;
+     -webkit-transform: rotate(90deg);
+     transform: rotate(90deg);
+   }
+
+
+   .booking-form .form-label {
+     display: inline-block;
+     color: #0d3715;
+     font-weight: 700;
+     margin-bottom: 6px;
+     margin-left: 7px;
+   }
+
+
+   .booking-form .submit-btn {
+     display: inline-block;
+     color: #fff;
+     background-color: rgb(0, 60, 23);
+     font-weight: 700;
+     padding: 14px 30px;
+     border-radius: 4px;
+     border: none;
+     -webkit-transition: 0.2s all;
+     transition: 0.2s all;
+   }
+
+
+   .booking-form .submit-btn:hover,
+   .booking-form .submit-btn:focus {
+     opacity: 0.9;
+   }
+
+
+   .booking-cta {
+     margin-top: 80px;
+     margin-bottom: 30px;
+   }
+
+
+   .booking-cta h1 {
+     font-size: 52px;
+     text-transform: uppercase;
+     color: #fff;
+     font-weight: 700;
+   }
+
+
+   .booking-cta p {
+     font-size: 16px;
+     color: rgba(255, 255, 255, 0.8);
+   }
+
+
+   /* About Us styling */
+   .about-us-container {
+     display: flex;
+     justify-content: space-between;
+   }
+
+
+   .about-us-bar {
+     font-size: 24px;
+     font-weight: bold;
+     color: #fff;
+   }
+
+
+   .about-us-content {
+     max-width: 700px;
+   }
+
+
+   .about-us-content h2 {
+     color: #fff;
+   }
+   .room__grid {
+     max-width: 1500px;
+     margin-inline: auto;
+     margin-top: 4rem;
+     display: grid;
+   }
+  
+   .room__card img {
+     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+   }
+  
+   .room__card__details {
+     margin-inline: 1rem;
+     padding: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 1rem;
+     background-color: var(--white);
+     transform: translateY(-50%);
+     border-radius: 5px;
+     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+   }
+  
+   .room__card__details h4 {
+     margin-bottom: 0.5rem;
+     font-size: 1.2rem;
+     font-weight: 800;
+     font-family: var(--header-font);
+     color: var(--text-dark);
+   }
+  
+   .room__card__details p {
+     color: var(--text-light);
+   }
+  
+   .room__card__details h3 {
+     font-size: 1.2rem;
+     font-weight: 600;
+     color: var(--secondary-color);
+   }
+  
+   .room__card__details h3 span {
+     font-size: 0.8rem;
+   }
+   .room__card img {
+ width: 300px; /* กำหนดความกว้างเป็น 200px */
+ height: 350px; /* กำหนดความสูงเป็น 150px */
+ object-fit: cover; /* ให้รูปภาพทำการตัดต่อหรือย่อขนาดเพื่อให้พอดีกับพื้นที่ที่กำหนด */
 }
 .room__grid {
-      display: flex;
-      flex-direction: row; /* Arrange items horizontally */
-      overflow-x: scroll; /* Add horizontal scroll if the content overflows */
-    }
+     display: flex;
+     flex-direction: row; /* Arrange items horizontally */
+     overflow-x: scroll; /* Add horizontal scroll if the content overflows */
+   }
 
-    .room__card {
-      width: 300px;
-      padding-left: 30px;
-      margin-right: 10px; /* Adjust spacing between cards */
-    }
+
+   .room__card {
+     width: 300px;
+     padding-left: 30px;
+     margin-right: 10px; /* Adjust spacing between cards */
+   }
 .section {
-      position: relative;
-      height: 100vh;
-    
-    }
+     position: relative;
+     height: 100vh;
+  
+   }
 
-    .section .section-center {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-    
 
-    body {
-      background-color: #ebf4e7;
-      /* เปลี่ยนสีเขียวตามที่คุณต้องการ */
-      margin: 0;
-      /* เพื่อลบ margin ที่ถูกกำหนดไว้โดยอัตโนมัติ */
-      padding: 0;
-      /* เพื่อลบ padding ที่ถูกกำหนดไว้โดยอัตโนมัติ */
-    }
+   .section .section-center {
+     position: absolute;
+     top: 50%;
+     left: 0;
+     right: 0;
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+   }
+  
 
-    #booking {
-      font-family: 'Montserrat', sans-serif;
-      --primary-color: rgba(8, 30, 2, 0.769);
-      background-size: cover;
-      background-position: center;
-    }
 
-    #booking::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-    }
+   body {
+     background-color: #ebf4e7;
+     /* เปลี่ยนสีเขียวตามที่คุณต้องการ */
+     margin: 0;
+     /* เพื่อลบ margin ที่ถูกกำหนดไว้โดยอัตโนมัติ */
+     padding: 0;
+     /* เพื่อลบ padding ที่ถูกกำหนดไว้โดยอัตโนมัติ */
+   }
 
-    .booking-form {
-      background-color: #fff;
-      padding: 50px 20px;
-      -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-      box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-      border-radius: 4px;
-      max-width: 500px;
-    }
 
-    .booking-form .form-group {
-      position: relative;
-      margin-bottom: 20px;
-    }
+   #booking {
+     font-family: 'Montserrat', sans-serif;
+     --primary-color: rgba(8, 30, 2, 0.769);
+     background-size: cover;
+     background-position: center;
+   }
 
-    .input-group button {
-      font-size: 14px;
-      width: 30px;
-      /* ปรับขนาดของปุ่ม */
-    }
 
-    .booking-form .form-control {
-      background-color: #ebecee;
-      border-radius: 4px;
-      border: none;
-      height: 40px;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      color: #3e485c;
-      font-size: 14px;
-    }
+   #booking::before {
+     content: '';
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     top: 0;
+   }
 
-    .booking-form .form-control::-webkit-input-placeholder {
-      color: rgba(62, 72, 92, 0.3);
-    }
 
-    .booking-form .form-control:-ms-input-placeholder {
-      color: rgba(62, 72, 92, 0.3);
-    }
+   .booking-form {
+     background-color: #fff;
+     padding: 50px 20px;
+     -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+     box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+     border-radius: 4px;
+     max-width: 500px;
+   }
 
-    .booking-form .form-control::placeholder {
-      color: rgba(62, 72, 92, 0.3);
-    }
 
-    .booking-form input[type="date"].form-control:invalid {
-      color: rgba(62, 72, 92, 0.3);
-    }
+   .booking-form .form-group {
+     position: relative;
+     margin-bottom: 20px;
+   }
 
-    .booking-form select.form-control {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
 
-    .booking-form select.form-control+.select-arrow {
-      position: absolute;
-      right: 0px;
-      bottom: 4px;
-      width: 32px;
-      line-height: 32px;
-      height: 32px;
-      text-align: center;
-      pointer-events: none;
-      color: rgba(62, 72, 92, 0.3);
-      font-size: 14px;
-    }
+   .input-group button {
+     font-size: 14px;
+     width: 30px;
+     /* ปรับขนาดของปุ่ม */
+   }
 
-    .booking-form select.form-control+.select-arrow:after {
-      content: '\279C';
-      display: block;
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
-    }
 
-    .booking-form .form-label {
-      display: inline-block;
-      color: #3e485c;
-      font-weight: 700;
-      margin-bottom: 6px;
-      margin-left: 7px;
-    }
+   .booking-form .form-control {
+     background-color: #ebecee;
+     border-radius: 4px;
+     border: none;
+     height: 40px;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     color: #3e485c;
+     font-size: 14px;
+   }
 
-    .booking-form .submit-btn {
-      display: inline-block;
-      color: #fff;
-      background-color: #1e7e34;
-      font-weight: 700;
-      padding: 14px 30px;
-      border-radius: 4px;
-      border: none;
-      -webkit-transition: 0.2s all;
-      transition: 0.2s all;
-    }
 
-    .booking-form .submit-btn:hover,
-    .booking-form .submit-btn:focus {
-      opacity: 0.9;
-    }
+   .booking-form .form-control::-webkit-input-placeholder {
+     color: rgba(62, 72, 92, 0.3);
+   }
 
-    .booking-cta {
-      margin-top: 80px;
-      margin-bottom: 30px;
-    }
 
-    .booking-cta h1 {
-      font-size: 52px;
-      text-transform: uppercase;
-      color: #fff;
-      font-weight: 700;
-    }
+   .booking-form .form-control:-ms-input-placeholder {
+     color: rgba(62, 72, 92, 0.3);
+   }
 
-    .booking-cta p {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.8);
-    }
 
-    /* About Us styling */
-    .about-us-container {
-      display: flex;
-      justify-content: space-between;
-    }
+   .booking-form .form-control::placeholder {
+     color: rgba(62, 72, 92, 0.3);
+   }
 
-    .about-us-bar {
-      font-size: 24px;
-      font-weight: bold;
-      color: #fff;
-    }
 
-    .about-us-content {
-      max-width: 600px;
-    }
+   .booking-form input[type="date"].form-control:invalid {
+     color: rgba(62, 72, 92, 0.3);
+   }
 
-    .about-us-content h2 {
-      color: #fff;
-    }
-    element.style {
-    margin-top: 250px;
+
+   .booking-form select.form-control {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+   }
+
+
+   .booking-form select.form-control+.select-arrow {
+     position: absolute;
+     right: 0px;
+     bottom: 4px;
+     width: 32px;
+     line-height: 32px;
+     height: 32px;
+     text-align: center;
+     pointer-events: none;
+     color: rgba(62, 72, 92, 0.3);
+     font-size: 14px;
+   }
+
+
+   .booking-form select.form-control+.select-arrow:after {
+     content: '\279C';
+     display: block;
+     -webkit-transform: rotate(90deg);
+     transform: rotate(90deg);
+   }
+
+
+   .booking-form .form-label {
+     display: inline-block;
+     color: #3e485c;
+     font-weight: 700;
+     margin-bottom: 6px;
+     margin-left: 7px;
+   }
+
+
+   .booking-form .submit-btn {
+     display: inline-block;
+     color: #fff;
+     background-color: #1e7e34;
+     font-weight: 700;
+     padding: 14px 30px;
+     border-radius: 4px;
+     border: none;
+     -webkit-transition: 0.2s all;
+     transition: 0.2s all;
+   }
+
+
+   .booking-form .submit-btn:hover,
+   .booking-form .submit-btn:focus {
+     opacity: 0.9;
+   }
+
+
+   .booking-cta {
+     margin-top: 80px;
+     margin-bottom: 30px;
+   }
+
+
+   .booking-cta h1 {
+     font-size: 52px;
+     text-transform: uppercase;
+     color: #fff;
+     font-weight: 700;
+   }
+
+
+   .booking-cta p {
+     font-size: 16px;
+     color: rgba(255, 255, 255, 0.8);
+   }
+
+
+   /* About Us styling */
+   .about-us-container {
+     display: flex;
+     justify-content: space-between;
+   }
+
+
+   .about-us-bar {
+     font-size: 24px;
+     font-weight: bold;
+     color: #fff;
+   }
+
+
+   .about-us-content {
+     max-width: 600px;
+   }
+
+
+   .about-us-content h2 {
+     color: #fff;
+   }
+   element.style {
+   margin-top: 250px;
 }
 element.style {
-    height: 300px;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 10px;
-}     
-
-.input-group {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: nowrap;
-    -ms-flex-align: stretch;
-    align-items: baseline;
-    width: 100%;
-    justify-content: space-evenly;
-    align-content: stretch;
+   height: 300px;
+   padding-right: 5px;
+   padding-left: 5px;
+   padding-top: 10px;
 }    
 
-}
-  </style>
-  <body>
-    <nav>
-      <div class="nav__bar">
-        <div class="nav__header">
-          <div class="logo nav__logo">
-            <div><img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png" class="fusion-standard-logo"></div>
-          </div>
-          <div class="nav__menu__btn" id="menu-btn">
-            <i class="ri-menu-line"></i>
-          </div>
-        </div>
-        <ul class="nav__links" id="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#room">Room</a></li>
-          <li><a href="#feature">Feature</a></li>
-           <!-- Home Page -->
-           <li><a href="http://127.0.0.1:5501/src/main/resources/public/order%20food/index.html#">Menu</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <header class="header" id="home">
-      <div class="section__container header__container">
-        <p class="section__subheader">CHIANGRAI THAILAND</p>
-        <h1> CHIANGRUNG PARK</h1>
-      </div>
-    </header>
-    <body>
-    </style>
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="booking" class="section" style="height: 350px;">
-      <div class="section-center">
-        <div class="container" style="
-        margin-left: 50px; 
-        margin-left: 40px;
-        margin-right: 20px;">
-          <div class="row">
-            <div class="col-md-7 col-md-push-5" style="height: 200px; width: 530px;">
-                <div class="booking-cta" style="margin-top: 40px;" >
-                  <h1 style=" text-align: center;">ABOUT US</h1>
-                  <p> Discover Our Underground
-                    Chiang Rung Park is a project with a Nordic style resort, restaurant and cafe inspired by European architecture. Give a warm feeling Simple, good atmosphere, cool, with a view of the surrounding mountains. It is only 20 minutes from Chiang Rai city and is close to many tourist attractions.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4 col-md-pull-7" style="height: 300px;
-              width: 330px;">
-                <div class="booking-form" style="height: 270px;
-                width: 440px;
-                margin-top: 10px;
-                margin-left: 200px;">
-                  <form>
-                    <div class="row" style="margin-top: -30px;">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <span class="form-label">Check In</span>
-                          <input class="form-control" type="date" required>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <span class="form-label">Check out</span>
-                          <input class="form-control" type="date" required>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <span class="form-label">Rooms</span>
-                          <div class="input-group">
-                            <button type="button" class="btn btn-outline-secondary" onclick="decrement('Rooms')" style="
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
-                        ">&#8722;</button>
-                            <input class="form-control text-center" type="text" id="Rooms" value="1" readonly>
-                            <button type="button" class="btn btn-outline-secondary" onclick="increment('Rooms')" style="
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            padding-top: 10px;
-                            padding-bottom: 10px;">&#43;</button>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <div class="form-group">
-                            <span class="form-label">Adults</span>
-                            <div class="input-group">
-                              <button type="button" class="btn btn-outline-secondary" onclick="decrement('adults')" style="
-                              padding-left: 10px;
-                              padding-right: 10px;
-                              padding-top: 10px;
-                              padding-bottom: 10px;
-                          ">&#8722;</button>
-                              <input class="form-control text-center" type="text" id="adults" value="1" readonly>
-                              <button type="button" class="btn btn-outline-secondary" onclick="increment('adults')" style="
-                              padding-left: 10px;
-                              padding-right: 10px;
-                              padding-top: 10px;
-                              padding-bottom: 10px;
-                          ">&#43;</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <span class="form-label">Children</span>
-                          <div class="input-group">
-                            <button type="button" class="btn btn-outline-secondary" onclick="decrement('Children')"style="
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
-                        ">&#8722;</button>
-                            <input class="form-control text-center" type="text" id="Children" value="1" readonly>
-                            <button type="button" class="btn btn-outline-secondary" onclick="increment('Children')"style="
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
-                        ">&#43;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-btn" style="
-                    padding-left: 100px;">
-                       <button class="btn" >
-                        <a href="room.html">Check availability</a>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
-  </body>
-  </html>
+.input-group {
+   position: relative;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-wrap: wrap;
+   flex-wrap: nowrap;
+   -ms-flex-align: stretch;
+   align-items: baseline;
+   width: 100%;
+   justify-content: space-evenly;
+   align-content: stretch;
+}   
+
+
+}
+ </style>
+ <body>
+   <nav>
+     <div class="nav__bar">
+       <div class="nav__header">
+         <div class="logo nav__logo">
+           <div><img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" data-retina_logo_url="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png" class="fusion-standard-logo"></div>
+         </div>
+         <div class="nav__menu__btn" id="menu-btn">
+           <i class="ri-menu-line"></i>
+         </div>
+       </div>
+       <ul class="nav__links" id="nav-links">
+         <li><a href="#home">Home</a></li>
+         <li><a href="#about">About</a></li>
+         <li><a href="#room">Room</a></li>
+         <li><a href="#feature">Feature</a></li>
+          <!-- Home Page -->
+          <li><a href="mainmenu.html">Menu</a></li>
+       </ul>
+     </div>
+   </nav>
+
+
+   <header class="header" id="home">
+     <div class="section__container header__container">
+       <p class="section__subheader">CHIANGRAI THAILAND</p>
+       <h1> CHIANGRUNG PARK</h1>
+     </div>
+   </header>
+   <body>
+   </style>
+   <title>Document</title>
+ </head>
+ <body>
+   <div id="booking" class="section" style="height: 350px;">
+     <div class="section-center">
+       <div class="container" style="
+       margin-left: 50px;
+       margin-left: 40px;
+       margin-right: 20px;">
+         <div class="row">
+           <div class="col-md-7 col-md-push-5" style="height: 200px; width: 530px;">
+               <div class="booking-cta" style="margin-top: 40px;" >
+                 <h1 style=" text-align: center;">ABOUT US</h1>
+                 <p> Discover Our Underground
+                   Chiang Rung Park is a project with a Nordic style resort, restaurant and cafe inspired by European architecture. Give a warm feeling Simple, good atmosphere, cool, with a view of the surrounding mountains. It is only 20 minutes from Chiang Rai city and is close to many tourist attractions.
+                 </p>
+               </div>
+             </div>
+             <div class="col-md-4 col-md-pull-7" style="height: 300px;
+             width: 330px;">
+               <div class="booking-form" style="height: 270px;
+               width: 440px;
+               margin-top: 10px;
+               margin-left: 200px;">
+                 <form>
+                   <div class="row" style="margin-top: -30px;">
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                         <span class="form-label">Check In</span>
+                         <input class="form-control" type="date" required>
+                       </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                         <span class="form-label">Check out</span>
+                         <input class="form-control" type="date" required>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="row">
+                     <div class="col-sm-4">
+                       <div class="form-group">
+                         <span class="form-label">Rooms</span>
+                         <div class="input-group">
+                           <button type="button" class="btn btn-outline-secondary" onclick="decrement('Rooms')" style="
+                           padding-left: 10px;
+                           padding-right: 10px;
+                           padding-top: 10px;
+                           padding-bottom: 10px;
+                       ">&#8722;</button>
+                           <input class="form-control text-center" type="text" id="Rooms" value="1" readonly>
+                           <button type="button" class="btn btn-outline-secondary" onclick="increment('Rooms')" style="
+                           padding-left: 10px;
+                           padding-right: 10px;
+                           padding-top: 10px;
+                           padding-bottom: 10px;">&#43;</button>
+                         </div>
+                       </div>
+                     </div>
+                    
+                     <div class="col-sm-4">
+                       <div class="form-group">
+                         <div class="form-group">
+                           <span class="form-label">Adults</span>
+                           <div class="input-group">
+                             <button type="button" class="btn btn-outline-secondary" onclick="decrement('adults')" style="
+                             padding-left: 10px;
+                             padding-right: 10px;
+                             padding-top: 10px;
+                             padding-bottom: 10px;
+                         ">&#8722;</button>
+                             <input class="form-control text-center" type="text" id="adults" value="1" readonly>
+                             <button type="button" class="btn btn-outline-secondary" onclick="increment('adults')" style="
+                             padding-left: 10px;
+                             padding-right: 10px;
+                             padding-top: 10px;
+                             padding-bottom: 10px;
+                         ">&#43;</button>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-sm-4">
+                       <div class="form-group">
+                         <span class="form-label">Children</span>
+                         <div class="input-group">
+                           <button type="button" class="btn btn-outline-secondary" onclick="decrement('Children')"style="
+                           padding-left: 10px;
+                           padding-right: 10px;
+                           padding-top: 10px;
+                           padding-bottom: 10px;
+                       ">&#8722;</button>
+                           <input class="form-control text-center" type="text" id="Children" value="1" readonly>
+                           <button type="button" class="btn btn-outline-secondary" onclick="increment('Children')"style="
+                           padding-left: 10px;
+                           padding-right: 10px;
+                           padding-top: 10px;
+                           padding-bottom: 10px;
+                       ">&#43;</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="form-btn" style="
+                   padding-left: 100px;">
+                      <button class="btn" >
+                       <a href="room.html">Check availability</a>
+                     </button>
+                   </div>
+                 </form>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+ </body>
+ </html>
+
 
 <p class="section__subheader" style="text-align: center;padding-top: 15px;">ROOMS</p>
 <h2 class="section__header" style="text-align: center;">Hand Picked Rooms</h2>
 <div class="room__grid" style="height: 400px;margin-left: 200px;">
-  <div class="room__card" style=" width: 300px;padding-left: 30px;">
-    <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/DJI_08111.jpg" alt="room">
-  </div>
-  <div class="room__card" style=" width: 300px;">
-    <img src="https://chiangrungpark.com/wp-content/uploads/2023/04/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3.jpg" alt="room">
-  </div>
-  <div class="room__card">
-    <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/DSC54531.jpg" alt="room">
-  </div>
+ <div class="room__card" style=" width: 300px;padding-left: 30px;">
+   <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/DJI_08111.jpg" alt="room">
+ </div>
+ <div class="room__card" style=" width: 300px;">
+   <img src="https://chiangrungpark.com/wp-content/uploads/2023/04/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3.jpg" alt="room">
+ </div>
+ <div class="room__card">
+   <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/DSC54531.jpg" alt="room">
+ </div>
 </div>
+
 
 <div style="
 margin-left: 650px;">
-  <button class="btn" >
-    <a href="room.html">Book Now</a>
-  </button>
+ <button class="btn" >
+   <a href="room.html">Book Now</a>
+ </button>
 </div>
 <nav>
-  <div class="section__container footer__container" style="height: 360px;
-  padding-top: 40px;">
-    <div class="footer__col">
-      <div class="logo footer__logo">
-        <span>CHIANGRUNG<br />PARK</span>
-      </div>
-      <p class="section__description">
-        Chiangrung Park is a good choice for any successful business persons to invest in a housing project in clean and green area at the top-north location of Thailand
-      </p>
-      <ul class="footer__socials">
-        <li>
-          <a href="#"><i class="ri-facebook-fill"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div class="footer__col">
-      <h4>Services</h4>
-      <div class="footer__links">
-        <li><a href="#">Online Booking</a></li>
-        <li><a href="#">Room Customization</a></li>
-        <li><a href="#">Concierge Services</a></li>
-        <li><a href="#">Customer Support</a></li>
-      </div>
-    </div>
-    <div class="footer__col">
-      <h4>Contact Us</h4>
-      <div class="footer__links">
-        <li>
-          <span><i class="ri-phone-fill"></i></span>
-          <div>
-            <h5>Phone Number</h5>
-            <p>094 371 0994</p>
-          </div>
-        </li>
-        <li>
-          <span><i class="ri-map-pin-2-fill"></i></span>
-          <div>
-            <h5>Location</h5>
-            <p>524 Pa Sak Ngam Village, Dong Mahawan Subdistrict, Wiang Chiang Rung District, Chiang Rai 57350</p>
-          </div>
-        </li>
-      </div>
-    </div>
-  </div>
-  <div class="footer__bar">
-    Chiangrung park & restaurant.
-  </div>
-  
+ <div class="section__container footer__container" style="height: 360px;
+ padding-top: 40px;">
+   <div class="footer__col">
+     <div class="logo footer__logo">
+       <span>CHIANGRUNG<br />PARK</span>
+     </div>
+     <p class="section__description">
+       Chiangrung Park is a good choice for any successful business persons to invest in a housing project in clean and green area at the top-north location of Thailand
+     </p>
+     <ul class="footer__socials">
+       <li>
+         <a href="#"><i class="ri-facebook-fill"></i></a>
+       </li>
+     </ul>
+   </div>
+   <div class="footer__col">
+     <h4>Services</h4>
+     <div class="footer__links">
+       <li><a href="#">Online Booking</a></li>
+       <li><a href="#">Room Customization</a></li>
+       <li><a href="#">Concierge Services</a></li>
+       <li><a href="#">Customer Support</a></li>
+     </div>
+   </div>
+   <div class="footer__col">
+     <h4>Contact Us</h4>
+     <div class="footer__links">
+       <li>
+         <span><i class="ri-phone-fill"></i></span>
+         <div>
+           <h5>Phone Number</h5>
+           <p>094 371 0994</p>
+         </div>
+       </li>
+       <li>
+         <span><i class="ri-map-pin-2-fill"></i></span>
+         <div>
+           <h5>Location</h5>
+           <p>524 Pa Sak Ngam Village, Dong Mahawan Subdistrict, Wiang Chiang Rung District, Chiang Rai 57350</p>
+         </div>
+       </li>
+     </div>
+   </div>
+ </div>
+ <div class="footer__bar">
+   Chiangrung park & restaurant.
+ </div>
+
+
+
+
+
+

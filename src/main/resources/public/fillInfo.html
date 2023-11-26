@@ -168,11 +168,30 @@
         roomImage.src = roomImageURL;
         roomType.textContent = type;
         roomPrice.textContent = price;
+ // Check if both check-in and check-out dates are selected
+ const checkinInput = document.getElementById('checkin');
+    const checkoutInput = document.getElementById('checkout');
+    if (checkinInput.value && checkoutInput.value) {
+        // Calculate and set room price
+        const pricePerNight = parseFloat(price.replace(',', '')); // Convert price to a number
+        const checkin = new Date(checkinInput.value);
+        const checkout = new Date(checkoutInput.value);
+        const numberOfNights = (checkout - checkin) / (1000 * 60 * 60 * 24); // Calculate the number of nights
+        const totalPrice = numberOfNights * pricePerNight;
+
+        roomPrice.textContent = ` ${totalPrice.toFixed(2)} THB`;
+    } else {
+        // Display the default price if check-in or check-out dates are not selected
+        roomPrice.textContent = price;
     }
+}
 
+// Call setRoomDetails when the page loads
+window.onload = setRoomDetails;
 
-    // Call setRoomDetails when the page loads
-    window.onload = setRoomDetails;
+// Call setRoomDetails whenever the check-in or check-out date changes
+document.getElementById('checkin').addEventListener('input', setRoomDetails);
+document.getElementById('checkout').addEventListener('input', setRoomDetails);
 
     function validateForm() {
             var fname = document.getElementById('fname').value;

@@ -8,12 +8,7 @@
   <title>Clothing Store</title>
   <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
   <style>
-
-    /**
-* ! Changing default styles of the browser
-**/
 body {
     font-family: Arial, sans-serif;
     background-image: url('https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/394303234_305687002220142_6782770896125873910_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHo_SXOTVfUwotg6ADL-n72Wz4xo0KuifJbPjGjQq6J8uteYDeGmb3hDAsTOHqri2E8Yms_Gfu2ivi8f0vhLg6A&_nc_ohc=PuyClKijpaIAX96E-1z&_nc_oc=AQmZUNgBZkwpENvJVpNgJ7cBRe7Xo8qVATDwF5lwH6vhEfIGHP-Y52MShLPl-LNWZXE&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfDlrw9T7NKOpOIqU62ZD4LkDesaLtsk0BctiiKEFBW_1Q&oe=6568A1E0');
@@ -33,8 +28,6 @@ body::before {
         background-color: rgba(0, 0, 0, 0.5); 
         z-index: -1;
     }
-
-
 
 
 nav {
@@ -112,6 +105,7 @@ nav {
   flex-direction: column;
   padding: 10px;
   gap: 10px;
+  background-color: #fff;
 }
 
 .price-quantity {
@@ -142,7 +136,7 @@ nav {
 
 .text-center {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .HomeBtn,
@@ -175,7 +169,7 @@ nav {
 
 .shopping-cart {
   display: grid;
-  grid-template-columns: repeat(2, 320px);
+  grid-template-columns: repeat(1, 320px);
   justify-content: center;
   gap: 15px;
 }
@@ -184,24 +178,11 @@ nav {
 * ! style rules for cart-item
 **/
 
-
-
 .cart-item {
   border: 2px solid #212529;
-  margin-bottom:50px;
-  display: grid;
-  grid-template-columns: 110px auto; /* ตั้งค่าความกว้างของคอลัมน์แรกเป็น 110px */
-  align-items: center;
-  background-color: #fff;
-
-  
+  border-radius: 5px;
+  display: flex;
 }
-
-.cart-item img {
-    margin-right: 10px; /* ระยะห่างระหว่างรูปภาพกับข้อความ */
-    
-}
-
 
 .title-price-x {
   width: 195px;
@@ -224,9 +205,6 @@ nav {
   padding: 3px 6px;
 }
 
-.text-center h2 {
-  color: #fff;
-}
 
 .menu {
     list-style: none;
@@ -275,33 +253,154 @@ nav {
 </head>
 
 <body>
-  <nav>
+  <div class="navbar">
+    <nav>
      
-    <div class="box-container" id="cartContainer"></div>
+      <div class="box-container" id="cartContainer"></div>
 
-    <div class="nav-bar">
-        <div class="nav-bar1">
-            <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
-            <ul class="menu">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">MENU</a></li>
-                <li><a href="#">ORDER</a></li>
-            </ul>
-            <a href="cart.html">
-              <div class="cart">
-                <i class="bi bi-cart2"></i>
-                <div id="cartAmount" class="cartAmount">0</div>
-              </div>
-            </a>
-        </div>
-    </div>
-</nav>
+      <div class="nav-bar">
+          <div class="nav-bar1">
+              <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
+              <ul class="menu">
+                  <a href="index.html">HOME</a>
+                  <li><a href="#">MENU</a></li>
+                  <li><a href="#">ORDER</a></li>
+              </ul>
+              
+              <a href="cart.html">
+                <div class="cart">
+                  <i class="bi bi-cart2"></i>
+                  <div id="cartAmount" class="cartAmount">0</div>
+                </div>
+              </a>
+          </div>
+      </div>
+  </nav>
+  
 
-  <div id="label" class="text-center"></div>
+ 
 
-  <div class="shopping-cart" id="shopping-cart"></div>
+  </div>
+
+  <div class="shop" id="shop">
+
+
+  </div>
+
 </body>
-<script src="src/Data.js"></script>
-<script src="src/cart.js"></script>
+<script >
+    let shopItemsData = [
+    {
+      id: "jfhgbvnscs",
+      name: "Sweet Basil",
+      price: 65,
+      desc: "Meat, basil leaves, chili, garlic, fried egg.",
+      img: src= "src/main/images/img-1.jpg",
+    },
+    {
+      id: "ioytrhndcv",
+      name: "Breakfast",
+      price: 60,
+      desc: "Sausage, fried egg, bread.",
+      img: src= "src/main/images/img-2.jpg",
+    },
+    {
+      id: "wuefbncxbsn",
+      name: "Chocolate Mint",
+      price: 55,
+      desc: "Chocolate ,Mint.",
+      img: src= "src/main/images/img-3.jpg",
+    },
+    {
+      id: "thyfhcbcv",
+      name: "Cocktaile",
+      price: 90,
+      desc: "Alcohol,Fruit.",
+      img: src= "src/main/images/img-4.jpg",
+    },
+  ];
+  
+</script>
+<script >
+    let shop = document.getElementById("shop");
+
+let basket = JSON.parse(localStorage.getItem("data")) || [];
+
+let generateShop = () => {
+  return (shop.innerHTML = shopItemsData
+    .map((x) => {
+      let { id, name, price, desc, img } = x;
+      let search = basket.find((x) => x.id === id) || [];
+      return `
+    <div id=product-id-${id} class="item">
+        <img width="220" src=${img} alt="sdd">
+        <div class="details">
+          <h3>${name}</h3>
+          <p>${desc}</p>
+          <div class="price-quantity">
+            <h2>฿ ${price} </h2>
+            <div class="buttons">
+              <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+              <div id=${id} class="quantity">
+              ${search.item === undefined ? 0 : search.item}
+              </div>
+              <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    })
+    .join(""));
+};
+
+generateShop();
+
+let increment = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+
+  if (search === undefined) {
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
+    });
+  } else {
+    search.item += 1;
+  }
+
+  // console.log(basket);
+  update(selectedItem.id);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+let decrement = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+  update(selectedItem.id);
+  basket = basket.filter((x) => x.item !== 0);
+  // console.log(basket);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  // console.log(search.item);
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
+
+let calculation = () => {
+  let cartIcon = document.getElementById("cartAmount");
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+};
+
+calculation();
+
+</script>
 
 </html>

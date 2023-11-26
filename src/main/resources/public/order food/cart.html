@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Restaurant Menu</title>
+    <title>Cart</title>
     <style>
-     body, html {
+      body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -73,6 +73,7 @@ nav {
     font-weight: bold;
     font-size: 1rem;
 }
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -97,28 +98,51 @@ nav {
     z-index: 3;
 }
 
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .box {
+            background-color: white;
+            padding: 30px;
+            margin: 30px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(25% - 40px); /* Adjust the percentage as needed */
+            margin-bottom: 20px;
+        }
+        .box img {
+            width: 100%;
+            height: 150px; /* Set a fixed height for the images */
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+
 .center-box {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
     height: 60vh;
     width: 60vw;
     background-color: #153d09;
-    margin: 0 10px;
+    margin: auto;
     position: absolute;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
     border-radius: 10px;
-    color: white;
+    color: #C4A621;
 }
 
 #payNowButton {
     background-color: #C4A621;
     color: black;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -140,31 +164,58 @@ nav {
 
 }
 
+.menu-section {
+    display: flex;
+    flex-direction: row; /* เรียงลำดับแนวนอน */
+}
 .menu {
-    font-size: 1.3rem;
-    color: white;
+    font-size: 1.5rem;
+    color: #C4A621;
     position: relative; /* เพิ่มบรรทัดนี้ */
     top: -100px; /* ปรับตำแหน่งขึ้น */
-    left: -40%; /* ปรับตำแหน่งซ้าย */
+    left: -15%; /* ปรับตำแหน่งซ้าย */
 }
 .price, .rate, .subtotal {
-    font-size: 1.3rem;
-    color: white;
+    font-size: 1.5rem;
+    color: #C4A621;
     position: relative;
     top: -65px;
     right: -20%;
+    margin: 0 30px; /* เพิ่มระยะห่างด้านซ้ายและด้านขวา */
 }
+.line {
+            position: absolute;
+            border-bottom: 3px solid white;
+            width: 55vw;
+            top: 110%;
+            transform: translateY(-50%);
+            z-index: 4;
+        }
 
 
 /* Media Query for Small Screens (Mobile) */
 @media screen and (max-width: 600px) {
     .center-box {
-        width: 80vw; /* Adjust width for small screens */
+        width: 80vw; /* ปรับความกว้างสำหรับหน้าจอขนาดเล็ก */
     }
-    .menu-section p {
-        font-size: 0.8rem; /* Adjust font size for small screens */
+    .menu-section {
+        flex-direction: column; /* เปลี่ยนเรียงลำดับให้เป็นแนวตั้ง */
+        align-items: center; /* จัดตำแหน่งกลางทั้งแนวนอนและแนวตั้ง */
+    }
+    .menu {
+        position: static; /* ลบการกำหนดตำแหน่ง */
+        top: 0; /* ลบการกำหนดตำแหน่ง */
+        left: 0; /* ลบการกำหนดตำแหน่ง */
+        margin-top: 10px; /* เพิ่มระยะห่างด้านบน */
+    }
+    .price, .rate, .subtotal {
+        position: static; /* ลบการกำหนดตำแหน่ง */
+        top: 0; /* ลบการกำหนดตำแหน่ง */
+        right: 0; /* ลบการกำหนดตำแหน่ง */
+        margin: 0; /* ลบการกำหนด margin */
     }
 }
+
     </style>
 
 </head>
@@ -193,6 +244,7 @@ nav {
 
     <div class="center-box">
         <div class="cart-section">
+            <div class="line"></div>
             <h2>Cart</h2>
         </div>
         <div class="menu-section">
@@ -218,13 +270,46 @@ nav {
 
     <!-- เพิ่มโค้ด JavaScript -->
     <script>
-        function payNow() {
-            // เพิ่มโค้ดที่ต้องการในการชำระเงิน
-            alert('Payment Successful!');
-        }
+        function displayCart() {
+    const centerBox = document.querySelector('.center-box');
+    centerBox.innerHTML = ''; // Clear previous content
 
-        // เพิ่ม Event Listener สำหรับปุ่ม Order และ Pay Now
-        document.getElementById('payNowButton').addEventListener('click', payNow);
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cartData.length > 0) {
+        const cartContainer = document.createElement('div');
+        cartContainer.className = 'box-container';
+
+        cartData.forEach(item => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'box';
+
+            const content = `
+                <div class="box-content">
+                    <p class="menu-name">${item.name}</p>
+                    <p class="quantity">Quantity: ${item.quantity}</p>
+                    <p class="price">Price: $${(item.quantity * item.price).toFixed(2)}</p>
+                </div>
+            `;
+            cartItem.innerHTML = content;
+            cartContainer.appendChild(cartItem);
+        });
+
+        centerBox.appendChild(cartContainer);
+    } else {
+        const noCartItemMessage = document.createElement('p');
+        noCartItemMessage.textContent = 'No items in the cart';
+        centerBox.appendChild(noCartItemMessage);
+    }
+    
+}
+
+// เพิ่มฟังก์ชัน checkout หรือทำตามที่คุณต้องการ
+function checkout() {
+    // สามารถทำการ redirect หรือดำเนินการต่อไปตามที่คุณต้องการ
+    alert('Checkout clicked!');
+}
+
     </script>
 
 </body>

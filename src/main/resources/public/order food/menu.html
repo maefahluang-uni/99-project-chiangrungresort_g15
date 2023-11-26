@@ -236,15 +236,14 @@ nav {
         </a>
         <div class="box-container" id="cartContainer"></div>
 
-        <div class="nav-bar">
-            <div class="nav-bar1">
-                <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">MENU</a></li>
-                    <li><a href="#">ORDER</a></li>
-                </ul>
-            </div>
+        <div class="nav-bar1">
+            <img src="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png" srcset="https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx1.png 1x, https://chiangrungpark.com/wp-content/uploads/2023/02/logo-chiangrungparkx2.png 2x" width="185" height="75" style="max-height:75px;height:auto;" alt="CHIANGRUNGPARK Logo" class="logo">
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="#">ORDER</a></li>
+            </ul>
+        </div>
         </div>
     </nav>
 
@@ -262,7 +261,7 @@ nav {
     <div class="summary-container">
         <div class="summary-box" id="summaryBox">
             <p class="total-amount" id="totalAmount">Total Amount: $0.00</p>
-            <button class="summary-button" onclick="addToCartSummary()">Add to Cart</button>
+            <a class="summary-button" href="cart.html">Add to Cart</a>
         </div>
     </div>
 
@@ -311,6 +310,47 @@ nav {
                 container.appendChild(noMenuItemMessage);
             }
         });
+        function addToCartSummary() {
+    // ดึงข้อมูลตะกร้าจาก Local Storage
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // ดึงข้อมูลรายการในเมนู
+    const menuItems = document.querySelectorAll('.box');
+
+    // วนลูปเพื่อตรวจสอบรายการที่ถูกเลือก
+    menuItems.forEach((menuItem) => {
+        const quantityElement = menuItem.querySelector('.quantity');
+        const quantity = parseInt(quantityElement.textContent);
+
+        // ถ้ามีจำนวนมากกว่า 0 ให้เพิ่มรายการลงในตะกร้า
+        if (quantity > 0) {
+            const menuNameElement = menuItem.querySelector('.menu-name');
+            const priceElement = menuItem.querySelector('.price');
+            const menuName = menuNameElement.textContent;
+            const price = parseFloat(priceElement.textContent.replace('Price:', ''));
+
+            // สร้าง object สำหรับรายการในตะกร้า
+            const cartItem = {
+                name: menuName,
+                quantity: quantity,
+                price: price
+            };
+
+            // เพิ่มรายการในตะกร้า
+            cartData.push(cartItem);
+
+            // Reset จำนวนในเมนูเป็น 0
+            quantityElement.textContent = '0';
+        }
+    });
+
+    // บันทึกข้อมูลตะกร้าลงใน Local Storage
+    localStorage.setItem('cart', JSON.stringify(cartData));
+
+    // คำนวณและแสดงราคารวมใน summary box
+    calculateTotal();
+}
+
 
         function updateQuantity(menuId, action) {
     const quantityElement = document.getElementById(`quantity_${menuId}`);
